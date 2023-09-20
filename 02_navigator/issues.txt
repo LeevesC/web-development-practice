@@ -1,0 +1,13 @@
+1. How to centralize content in different type of block?
+  - text content in block-level elements centralized horizontally by text-align:center.
+  - text content in inline-level elements no need to centralize, the size of inline-level is support by its content.
+  - inline-block inside a block-level element can be treated as text content.
+  - block-level inside a defined size(width and height) of block-level element normally use positioning to centralize it.
+
+2. What is line-height and how to use it?
+
+3. What is vertical-align and in which does this used?
+
+4. How to adjust icon's position in front of a text?
+
+5. Many property has the value 'inherit', learn this value.

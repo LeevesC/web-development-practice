@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: content-box;
+    }
+    ul {
+      list-style-type: none;
+    }
+
+    .bar {
+      background-color: rgb(209, 211, 212);
+      width: 1200px;
+      height: 40px;
+      margin: 0 auto;
+      position: relative;
+    }
+    /* ------------------- left block ------------------- */
+    .left {
+      /* border: 1px solid; */
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    .left li {
+      float: left;
+      line-height: 40px;
+      color: rgb(93, 87, 87);
+    }
+    svg {
+      width: 20px;
+      height: auto;
+      vertical-align: middle;
+    }
+    .left li:last-of-type {
+      margin-left: 20px;
+    }
+    .left a {
+      text-decoration: none;
+      color: rgb(93, 87, 87);
+    }
+
+    /* -- hover effects -- */
+    .oversea {
+      padding-right: 7px;
+      padding-left: 4px;
+    }
+    .oversea:hover {
+      background-color: white;
+      color: red;
+      cursor: pointer;
+    }
+    .left a:hover {
+      color: red;
+    }
+
+    /* -------------------- right block ------------------ */
+    .right {
+      /* border: 1px solid; */
+      position: absolute;
+      right: 20px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    .right li {
+      float: left;
+      line-height: 40px;
+      color: rgb(93, 87, 87);
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .new {
+      color: red;
+      margin-left: 7px;
+    }
+    .right .procurement {
+      color: red;
+    }
+    /* -- hover effects -- */
+    .hello:hover,
+    .new:hover,
+    .order:hover,
+    .accessibilit:hover {
+      color: red;
+      cursor: pointer;
+    }
+
+    .jd:hover,
+    .procurement:hover,
+    .service:hover,
+    .roadmap:hover,
+    .mobile:hover {
+      background-color: white;
+    }
+
+  </style>
+
+
+</head>
+<body>
+  
+  <div class="bar">
+
+    <ul class="left">
+      <li class="oversea"><?xml version="1.0" ?><svg height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M24 4c-7.73 0-14 6.27-14 14 0 10.5 14 26 14 26s14-15.5 14-26c0-7.73-6.27-14-14-14zm0 19c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z" fill="red"/><path d="M0 0h48v48H0z" fill="none"/></svg><span>Oversea</span></li>
+      <li><a href="#">Enterprise</a></li>
+    </ul>
+
+    <ul class="right">
+      <li><span class="hello">Hello Sign in</span> <span class="new">Sign up</span></li>
+      <li class="order">My Order</li>
+      <li class="jd">My JD</li>
+      <li class="procurement">Procurement</li>
+      <li class="service">Service</li>
+      <li class="roadmap">Roadmap</li>
+      <li class="mobile">Mobile</li>
+      <li class="accessibilit">Accessibility</li>
+    </ul>
+
+  </div>
+
+</body>
+</html>
+
