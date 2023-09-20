@@ -1,0 +1,13 @@
+Key point in this exercise
+1. structure of this exercise.
+  - an outside <div> as the container to wrap all elements up.
+  - for achieving images shifting, all images should pile up.
+  - pics should be a link.
+3. how to shift?
+4. how to fit the size of image with its container-block?
+  - set images' height and width 100% and object-fit to cover.
+5. deep understand of box-sizing.
+  - when add border to a element, its position might change without setting box-sizing.
+  - because the default setting keep content-box fixed, so the border's width and height will add outside.
+  - after setting box-sizing to border-box, border's width will squeeze inside keep the element position no changed.
+6. recap float layout purpose.

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ul {
+      list-style-type: none;
+    }
+    .main {
+      position: relative;
+      top: 200px;
+      left: 300px;
+      height: 400px;
+      width: 500px;
+      border: 1px solid;
+    }
+    img {
+      height: 400px;
+      width: 500px;
+    }
+
+    .indicator {
+      position: absolute;
+      bottom: 15px;
+      left: 20px;
+    }
+    .indicator div {
+      width: 7px;
+      height: 7px;
+      border-radius: 4px;
+      background-color: rgba(214, 207, 207, 0.8);
+      display: inline-block;
+    }
+    .indicator div:hover {
+      background-color: white;
+      outline: 2px solid rgba(237, 236, 236, 0.5);
+    }
+
+    .pre {
+      position: absolute;
+      width: 25px;
+      height: 30px;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      background-color: rgba(232, 223, 223, 0.5);
+      margin: auto;
+      top: 0;
+      bottom: 0;
+    }
+    .pre:hover {
+      background-color: rgba(110, 107, 107, 0.8);
+    }
+
+    .next {
+      position: absolute;
+      width: 25px;
+      height: 30px;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      background-color: rgba(232, 223, 223, 0.5);
+      margin: auto;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+    .next:hover {
+      background-color: rgba(110, 107, 107, 0.8);
+    }
+  </style>
+
+
+
+</head>
+<body>
+  
+  <div class="main">
+    <ul>
+      <li>
+        <img src="./shifting_pics_01.jpg" alt="01">
+      </li>
+      <!-- <li><img src="./shifting_pics_02.jpg" alt="02"></li>
+      <li><img src="./shifting_pics_03.jpeg" alt="03"></li> -->
+    </ul>
+    <div class="indicator">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="pre"></div>
+    <div class="next"></div>
+  </div>
+
+
+</body>
+</html>
