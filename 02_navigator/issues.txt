@@ -5,9 +5,17 @@
   - block-level inside a defined size(width and height) of block-level element normally use positioning to centralize it.
 
 2. What is line-height and how to use it?
+  - commonly used to set the distance between lines of text.
+  - So, if there are just one line of text in an element, setting line-height equals height of the element, can centralize vertically the text.
 
 3. What is vertical-align and in which does this used?
+  - Sets vertical alignment of a inline, inline-block relative to its adjacent text or table-cell box.
+  - uncommonly to use
 
 4. How to adjust icon's position in front of a text?
+  - using vertical-align mentioned above.
+  - condition is the icon lays in text element as a inline or inline-block.
 
 5. Many property has the value 'inherit', learn this value.
+  - inherit is a value for almost all properties in CSS.
+  - it means the property of this element will be the same with its parent element.
