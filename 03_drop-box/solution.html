@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/feee628af3.js" crossorigin="anonymous"></script>
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      background-color: #bfa;
+    }
+    .outer {
+      min-width: 1190px;
+      height: 30px;
+      
+      background-color: #e3e4e5;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .menu {
+      width: 1190px;
+      height: 30px;
+      
+      margin: 0 auto;
+      line-height: 30px;
+      color: #999;
+    }
+    .user-info {
+      list-style-type: none;
+    }
+    /* ------- left ------- */
+    .city {
+      float: left;
+      cursor: pointer;
+      position: relative;
+
+    }
+    .city i {
+      color: #f10215;
+      font-size: 14px;
+    }
+    .city .current {
+      padding: 0 7px;
+      border: 1px solid transparent;
+      border-bottom: none;
+      position: relative;
+      z-index: 999;
+    }
+    .city:hover .current {
+      background-color: #fff;
+      border: 1px solid red;
+      border-bottom: none;
+    }
+    .city .current:hover span {
+      color: red;
+    }
+    /* ----- setting drop down ----- */
+    .city .dropdown {
+      width: 300px;
+      height: 416px;
+      padding: 10px;
+      border: 1px red solid;
+      position: absolute;
+      top: 30px;
+      background-color: #fff;
+      display: none;
+    }
+    .city:hover .dropdown {
+      display: block;
+    }
+    /* ------- right ------- */
+    .user-info {
+      float: right;
+    }
+    .user-info li,
+    .user-info .line {
+      float: left;
+    }
+    .user-info li {
+      padding: 0 7px;
+    }
+
+    .user-info .hot,
+    .user-info li:hover {
+      color: red;
+    }
+
+    /* setting little line */
+    .user-info .line{
+      height: 10px;
+      margin: 10px 5px;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="outer">
+    <div class="menu">
+<!-- left buttons -->
+      <div class="city">
+        <div class="current">
+          <i class="fa-solid fa-map-marker-alt"></i>
+          <span>ShenZhen</span>
+        </div>
+        <div class="dropdown"></div>
+      </div>
+<!-- right buttons -->
+      <ul class="user-info">
+        <li>
+          <a href="#">Hello,SignUp</a>
+        </li>
+        <li>
+          <a class='hot' href="#">SignIn</a>
+        </li>
+        <span class="line"></span>
+        <li>
+          <a href="#">Order</a>
+        </li>
+        <span class="line"></span>
+        <li>
+          <a href="#">MyJD</a>
+          <i class="fa-solid fa-angle-down"></i>
+        </li>
+        <span class="line"></span>
+        <li>
+          <a class='hot' href="#">Procurement</a>
+          <i class="fa-solid fa-angle-down"></i>
+        </li>
+        <span class="line"></span>
+        <li>
+          <a href="#">Service</a>
+          <i class="fa-solid fa-angle-down"></i>
+        </li>
+        <span class="line"></span>
+        <li>
+          <a href="#">Roadmap</a>
+          <i class="fa-solid fa-angle-down"></i>
+        </li>
+        <span class="line"></span>
+        <li>
+          <a href="#">Mobile</a>
+        </li>
+        <span class="line"></span>
+        <li>
+          <a href="#">Accessibility</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>

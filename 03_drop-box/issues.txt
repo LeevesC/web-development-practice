@@ -1,0 +1,10 @@
+1. To arrange the drop-down box right below the button, I used absolute positioning way, which seems cumbersome.
+  - your solution is right, at least so far.
+
+2. The text change a bit when add border with hover?
+  - reason is adding border based on original status without border, new border will squeeze the content area out.
+  - best way to solve is add border for origin and transparent it...
+
+3. How to hover on an element but affects to another element?
+  - hover is a kind of selector.
+

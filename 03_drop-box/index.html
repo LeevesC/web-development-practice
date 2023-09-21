@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/feee628af3.js" crossorigin="anonymous"></script>
+  <title>drop-box</title>
+  <style>
+  * {
+      padding: 0;
+      margin: 0;
+      box-sizing: content-box;
+    }
+    .outer {
+      min-width: 1190px;
+      height: 30px;
+      background-color: #e3e4e5;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .menu {
+      width: 1190px;
+      height: 30px;
+      margin: 0 auto;
+      line-height: 30px;
+      color: #999;
+      position: relative;
+    }
+    .user-info {
+      list-style-type: none;
+    }
+    /* ------- left ------- */
+    .city {
+      float: left;
+      cursor: pointer;
+    }
+    .city i {
+      color: #f10215;
+      font-size: 14px;
+    }
+    .city .current {
+      padding: 0 7px;
+    }
+    /* ------- right ------- */
+    .user-info {
+      float: right;
+    }
+    .user-info li,
+    .user-info .line {
+      float: left;
+    }
+    .user-info li {
+      padding: 0 7px;
+    }
+
+    .user-info .hot,
+    .user-info li:hover {
+      color: red;
+    }
+
+    /* setting little line */
+    .user-info .line{
+      height: 10px;
+      border-left: 1px solid;
+      margin: 10px 5px;
+    }
+    /* --- drop down --- */
+    .menu .drop-city {
+      width: 400px;
+      height: 400px;
+      background-color: white;
+      position: absolute;
+      border: 1px solid ;
+      top:30px;
+      display: none;
+    }
+
+    .city:hover {
+      background-color: white;
+      border-right: 1px solid #999;
+      border-left: 1px solid #999;
+      border-top: 1px solid #999;
+    }
+
+    .city:hover > .drop-city {
+      display: block;
+    }
+    
+
+
+    /* ----- test bar ----- */
+    .test {
+      margin-top: 200px;
+      height: 40px;
+      background-color: #e3e4e5;
+      position: relative;
+    }
+    .test .test-bar {
+      margin: 0 auto;
+      width: 100px;
+      height: 40px;
+      background-color: antiquewhite;
+      text-align: center;
+      line-height: 40px;
+    }
+    p {
+      margin: 0 auto;
+      width: 700px;
+    }
+    .test-drop {
+      width: 400px;
+      height: 400px;
+      background-color: antiquewhite;
+      display: none;
+      position: absolute;
+      left: 766px;
+      top: 40px;
+      border: 1px solid black;
+    }
+
+    /* hover action */
+    .test .test-bar:hover {
+      background-color: #ed8f97;
+      color: white;
+      border-right: 1px solid black;
+      border-left: 1px solid black;
+      border-top: 1px solid black;
+    }
+    .test .test-bar:hover + .test-drop,
+    .test-drop:hover {
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <div class="menu">
+<!-- left buttons -->
+      <div class="city">
+        <div class="current">
+          <i class="fa-solid fa-map-marker-alt"></i>
+          <span>ShenZhen</span>
+        </div>
+        <div class="drop-city"></div>
+      </div>
+      
+<!-- right buttons -->
+      <ul class="user-info">
+        <li>
+          <a href="#">Hello,SignUp</a>
+        </li>
+        <li>
+          <a class='hot' href="#">SignIn</a>
+        </li>
+        <span class="line"></span>
+        <li>
+          <a href="#">Order</a>
+        </li>
+        <span class="line"></span>
+        <li>
+          <a href="#">MyJD</a>
+          <i class="fa-solid fa-angle-down"></i>
+        </li>
+        <span class="line"></span>
+        <li>
+          <a class='hot' href="#">Procurement</a>
+          <i class="fa-solid fa-angle-down"></i>
+        </li>
+        <span class="line"></span>
+        <li>
+          <a href="#">Service</a>
+          <i class="fa-solid fa-angle-down"></i>
+        </li>
+        <span class="line"></span>
+        <li>
+          <a href="#">Roadmap</a>
+          <i class="fa-solid fa-angle-down"></i>
+        </li>
+        <span class="line"></span>
+        <li>
+          <a href="#">Mobile</a>
+        </li>
+        <span class="line"></span>
+        <li>
+          <a href="#">Accessibility</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="test">
+    <div class="test-bar">Button</div>
+    <div class="test-drop"></div>
+  </div>
+  <p>How to centralize content in different type of block?
+    - text content in block-level elements centralized horizontally by text-align:center.
+    - text content in inline-level elements no need to centralize, the size of inline-level is support by its content.
+    - inline-block inside a block-level element can be treated as text content.
+    - block-level inside a defined size(width and height) of block-level element normally use positioning to centralize it.
+  </p>
+</body>
+</html>
