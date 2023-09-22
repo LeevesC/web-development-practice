@@ -1,3 +1,10 @@
 1. When an element be set to flex box, what type is it? block-level or inline-level?
+  - Block-Level Flex container. elements with 'display: flex' will act like a block-level element.
+  - In Document Flow. Flex container and its children remain in the document flow.
 
-2. 
+2. What's the feature of a block, when setting a inline-level element into a block?
+  - Taking up the full width available.
+  - breaking onto a new line in the layout.
+
+3. What's the purpose of flex:auto? and comparing to justify-content?
+
