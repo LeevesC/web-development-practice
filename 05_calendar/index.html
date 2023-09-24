@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>calendar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    /* --- calendar --- */
+    .container {
+      width: 645px;
+      height: 380px;
+      background-color:rgb(168, 168, 163);
+      margin: 100px auto;
+      position: relative;
+    }
+    .table table {
+      border: 1px solid rgb(213, 213, 213);
+      border-collapse: collapse;
+      background-color: white;
+      width: 80%;
+      position: absolute;
+      top: 20px;
+      left: 100px;
+    }
+    .table td {
+      border: 1px solid rgb(213, 213, 213);
+    }
+    thead td {
+      height: 30px;
+      width: 80px;
+      text-align: center;
+    }
+    tbody td {
+      height: 50px;
+      text-align: center;
+      width: 80px;
+    }
+    span {
+      display: block;
+    }
+    /* --- current date --- */
+    .mark {
+      width: 50px;
+      height: 50px;
+      border-radius: 2px;
+      background-color: red;
+      position: absolute;
+      top: 20px;
+      left: 50px;
+      text-align: center;
+      line-height: 50px;
+      font-size: 30px;
+      color: white;
+    }
+    /* ---- details ---- */
+    .table thead td:nth-of-type(6),
+    .table thead td:nth-of-type(7){
+      color: red;
+    }
+
+    .holiday {
+      background-color: rgb(255, 236, 236);
+      position: relative;
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      position: absolute;
+      border-radius: 3px;
+      color: white;
+      text-align: center;
+      line-height: 20px;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="mark">1</div>
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <td>Mon</td>
+            <td>Tu</td>
+            <td>W</td>
+            <td>Th</td>
+            <td>F</td>
+            <td>Sa</td>
+            <td>Su</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td class="holiday"><div class="icon">O</div><span class="date">1</span><span class="lunar">YuanDan</span></td>
+          </tr>
+          <tr>
+            <td class="holiday"><div class="icon">O</div><span class="date">2</span><span class="lunar">Chu</span></td>
+            <td><span class="date">4</span><span class="lunar">Chu</span></td>
+            <td><span class="date">3</span><span class="lunar">Chu</span></td>
+            <td><span class="date">5</span><span class="lunar">Chu</span></td>
+            <td><span class="date">6</span><span class="lunar">Chu</span></td>
+            <td><span class="date">7</span><span class="lunar">Chu</span></td>
+            <td><span class="date">8</span><span class="lunar">Chu</span></td>
+          </tr>
+          <tr>
+            <td><span class="date">9</span><span class="lunar">Chu</span></td>
+            <td><span class="date">10</span><span class="lunar">Chu</span></td>
+            <td><span class="date">11</span><span class="lunar">Chu</span></td>
+            <td><span class="date">12</span><span class="lunar">Chu</span></td>
+            <td><span class="date">13</span><span class="lunar">Chu</span></td>
+            <td><span class="date">14</span><span class="lunar">Chu</span></td>
+            <td><span class="date">15</span><span class="lunar">Chu</span></td>
+          </tr>
+          <tr>
+            <td><span class="date">16</span><span class="lunar">Chu</span></td>
+            <td><span class="date">17</span><span class="lunar">Chu</span></td>
+            <td><span class="date">18</span><span class="lunar">Chu</span></td>
+            <td><span class="date">19</span><span class="lunar">Chu</span></td>
+            <td><span class="date">20</span><span class="lunar">Chu</span></td>
+            <td><span class="date">21</span><span class="lunar">Chu</span></td>
+            <td><span class="date">22</span><span class="lunar">Chu</span></td>
+          </tr>
+          <tr>
+            <td><span class="date">23</span><span class="lunar">Chu</span></td>
+            <td><span class="date">24</span><span class="lunar">Chu</span></td>
+            <td><span class="date">25</span><span class="lunar">Chu</span></td>
+            <td><span class="date">26</span><span class="lunar">Chu</span></td>
+            <td class="holiday"><div class="icon">O</div><span class="date">27</span><span class="lunar">Chu</span></td>
+            <td class="holiday"><div class="icon">O</div><span class="date">28</span><span class="lunar">Chu</span></td>
+            <td class="holiday"><div class="icon">O</div><span class="date">29</span><span class="lunar">Chu</span></td>
+          </tr>
+          <tr>
+            <td class="holiday"><div class="icon">O</div><span class="date">30</span><span class="lunar">Chu</span></td>
+            <td class="holiday"><div class="icon">O</div><span class="date">31</span><span class="lunar">Chu</span></td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

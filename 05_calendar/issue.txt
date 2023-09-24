@@ -1,0 +1,4 @@
+1. How to use Pseudo-elements?
+  - pseudo-element is a keyword added to selector that lets you style a specific part of the selected element.
+  - ::after, create a pseudo-element that is the last child of the selected element. often used to add cosmetic content. inline by default.
+  - ::before, ... that is the first child of the selected element.

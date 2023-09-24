@@ -7,4 +7,5 @@
   - breaking onto a new line in the layout.
 
 3. What's the purpose of flex:auto? and comparing to justify-content?
-
+  - flex-wrap to set flex items can wrap onto multiple lines.
+  - flex (flex-grow, flex-shrink, flex-basis) sets how a flex item will grow or shrink to fit the space available in its flex container.

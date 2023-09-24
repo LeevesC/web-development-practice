@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>calendar-solution</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .outer {
+      width: 742px;
+      height: 460px;
+      background-color: #bfa;
+      margin: 100px auto;
+      position: relative;
+    }
+    .month {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background-color: #f00;
+      font-size: 36px;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      line-height: 60px;
+      left: -60px;
+    }
+    table {
+      width: 100%;
+      height: 100%;
+      border-collapse: collapse;
+      background-color: rgb(242, 242, 242);
+    }
+    td,th {
+      border: 1px rgb(223, 223, 223) solid;
+      width: 106px;
+    }
+    tr:first-child {
+      height: 40px;
+    }
+    th {
+      font-size: 20px;
+    }
+    .red {
+      color: red;
+    }
+    td {
+      font-size: 16px;
+      text-align: center;
+      vertical-align: middle;
+      position: relative;
+    }
+    td div:first-child {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .xiu {
+      background-color: rgb(254, 240, 239);
+    }
+    .xiu::before {
+      content: '休';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      background-color: red;
+      color: white;
+      font-weight: bold;
+      line-height: 30px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <span class="month">1</span>
+    <table>
+      <tr>
+        <th>一</th>
+        <th>二</th>
+        <th>三</th>
+        <th>四</th>
+        <th>五</th>
+        <th class="red">六</th>
+        <th class="red">七</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <div>1</div>
+          <div>元旦</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>2</div>
+          <div>初五</div>
+        </td>
+        <td>
+          <div>3</div>
+          <div>初六</div>
+        </td>
+        <td>
+          <div>4</div>
+          <div>初七</div>
+        </td>
+        <td>
+          <div>5</div>
+          <div class="red">腊八节</div>
+        </td>
+        <td>
+          <div>6</div>
+          <div>初九</div>
+        </td>
+        <td>
+          <div>7</div>
+          <div>初十</div>
+        </td>
+        <td>
+          <div>8</div>
+          <div>十一</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>9</div>
+          <div>十二</div>
+        </td>
+        <td>
+          <div>10</div>
+          <div>十三</div>
+        </td>
+        <td>
+          <div>11</div>
+          <div>十四</div>
+        </td>
+        <td>
+          <div>12</div>
+          <div>十五</div>
+        </td>
+        <td>
+          <div>13</div>
+          <div>十六</div>
+        </td>
+        <td>
+          <div>14</div>
+          <div>十七</div>
+        </td>
+        <td>
+          <div>15</div>
+          <div>十八</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>16</div>
+          <div>初九</div>
+        </td>
+        <td>
+          <div>17</div>
+          <div>二十</div>
+        </td>
+        <td>
+          <div>18</div>
+          <div>廿一</div>
+        </td>
+        <td>
+          <div>19</div>
+          <div>廿二</div>
+        </td>
+        <td>
+          <div>20</div>
+          <div class="red">小年</div>
+        </td>
+        <td>
+          <div>21</div>
+          <div>廿四</div>
+        </td>
+        <td>
+          <div>22</div>
+          <div>廿五</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>23</div>
+          <div>廿六</div>
+        </td>
+        <td>
+          <div>24</div>
+          <div>廿七</div>
+        </td>
+        <td>
+          <div>25</div>
+          <div>廿八</div>
+        </td>
+        <td>
+          <div>26</div>
+          <div>廿九</div>
+        </td>
+        <td class="xiu">
+          <div>27</div>
+          <div class="red">除夕</div>
+        </td>
+        <td class="xiu">
+          <div>28</div>
+          <div class="red">春节</div>
+        </td>
+        <td class="xiu">
+          <div>29</div>
+          <div>初二</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="xiu">
+          <div>30</div>
+          <div>初三</div>
+        </td>
+        <td class="xiu">
+          <div>31</div>
+          <div>初四</div>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
