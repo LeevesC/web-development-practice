@@ -1,0 +1,257 @@
+/* ----- global ----- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+/* ----- navigator ----- */
+.navigator {
+  background-color: #333;
+}
+.navigator .bar {
+  width: 1226px;
+  height: 40px;
+  margin: 0 auto;
+  background-color: #333;
+}
+.bar .left {
+  float: left;
+}
+.bar .right {
+  float: right;
+}
+.left ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  line-height: 40px;
+}
+.right ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  line-height: 40px;
+  height: 40px;
+}
+.bar a {
+  color: #b0b0b0;
+  font-size: 12px;
+}
+.bar .line {
+  margin: 16px 5px;
+  border-left: 1px solid #424242;
+  height: 10px;
+}
+.right i {
+  margin-right: 3px;
+  vertical-align: middle;
+}
+.right li:last-of-type {
+  height: 100%;
+  background-color: #424242;
+  padding: 0 10px;
+  margin-left: 10px;
+  
+}
+/* - hover action - */
+.right li:last-of-type:hover {
+  background-color: #ff6700;
+  cursor: pointer;
+}
+.right li:hover a {
+  color: white;
+}
+.left a:hover {
+  color: white;
+}
+/* drop bar */
+.navigator .qrcode {
+  background-color: rgb(233, 170, 170);
+  padding-top: 10px;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-bottom: 0;
+  position: absolute;
+  z-index: 999;
+  display: none;
+}
+.navigator .qrcode p {
+  text-align: center;
+  margin-top: 0;
+}
+.navigator .qrcode img {
+  width: 90px;
+  height: 100%;
+  object-fit: cover;
+  margin-bottom: 0;
+  display: block;
+}
+.left .drop:hover .qrcode,
+.navigator .left .qrcode:hover {
+  display: block;
+}
+/* ----- head ----- */
+.head {
+  width: 1226px;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.head .icon {
+  width: 56px;
+  height: 56px;
+}
+.head .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.head .products-list ul {
+  display: flex;
+  justify-content: space-between;
+}
+.head .products-list li {
+  margin: 0 10px;
+}
+.head .products-list a {
+  color: #757575;
+}
+.head .search input {
+  height: 48px;
+  width: 223px;
+  border: 1px solid #e0e0e0;
+  padding-left: 10px;
+}
+.head .search div {
+  display: inline-block;
+  border: 1px solid #e0e0e0;
+  height: 47px;
+  line-height: 47px;
+  border-left: none;
+}
+.head .search i {
+  margin: 0 14px;
+}
+/* hover action */
+.head .products-list a:hover {
+  color: #ff6700;
+}
+.head .search div:hover {
+  background-color: #ff6700;
+  cursor: pointer;
+}
+.head .search div:hover i {
+  color: white;
+}
+/* ----- slides ----- */
+.slides {
+  width: 1226px;
+  height: 460px;
+  margin: 0 auto;
+  background-color: #757575;
+  position: relative;
+}
+.slides .pics li {
+  position: absolute;
+}
+.slides .pics img {
+  width: 100%;
+  height: 100%;
+  object-fit:contain;
+}
+.shift-button {
+  position: absolute;
+  right: 0;
+  z-index: 999;
+  margin: auto auto;
+  height: 69px;
+  top: 0;
+  bottom: 0;
+  width: 992px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shift-button .left-angle,
+.shift-button .right-angle {
+  height: 100%;
+  width: 41px;
+  padding: 10px 7px;
+  display: flex;
+  align-items: center;
+}
+.shift-button i {
+  font-size: 38px;
+  color: white;
+}
+.shift-button .left-angle:hover,
+.shift-button .right-angle:hover {
+  background-color: #333;
+  cursor: pointer;
+}
+/* indicator */
+.indicator {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+}
+.indicator li{
+  float: left;
+  width: 6px;
+  height: 6px;
+  border: 1px solid #afafaf;
+  border-radius: 3px;
+  background-color: #727272;
+  margin: 0 2px;
+}
+.indicator .active {
+  background-color: #bcbcbc;
+}
+.indicator li:hover {
+  background-color: #bcbcbc;
+  cursor: pointer;
+}
+
+/* list */
+.slides .list {
+  position: absolute;
+  z-index: 999;
+  width: 234px;
+  height: 100%;
+  background-color: rgba(105,101,101,.6);
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+.slides .list ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.slides .list li {
+  width: 100%;
+  height: 42px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.slides .list a {
+  color: white;
+  font-size: 14px;
+}
+/* hover */
+.slides .list li:hover {
+  background-color: #ff6700;
+  cursor: pointer;
+}

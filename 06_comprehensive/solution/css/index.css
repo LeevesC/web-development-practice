@@ -1,0 +1,167 @@
+
+.top-nav {
+  background-color: #333;
+  color: #b0b0b0;
+  font-size: 12px;
+}
+
+.nav-inner {
+  display: flex;
+  height: 40px;
+  line-height: 40px;
+  justify-content: space-between;
+}
+.nav-inner a:hover {
+  color: #fff;
+}
+
+.top-nav .sep {
+  color: #424242;
+  margin: 0 0.6em;
+}
+
+.link-wrap {
+  display: flex;
+}
+
+.download-app {
+  position: relative;
+}
+
+.download-app .hide {
+  position: absolute;
+  /* height: 148px; */
+  height: 0;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+  z-index: 998;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  left: -36px;
+  transition: height 0.2s;
+}
+
+.download-app .inner {
+  width: 124px;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  overflow: hidden;
+
+}
+
+.download-app:hover .hide {
+  height: 148px;
+}
+
+.download-app:hover .hide::before {
+  width: 0;
+  height: 0;
+  content: '';
+  position: absolute;
+  border: 8px transparent solid;
+  border-top: none;
+  border-bottom-color: #fff;
+  left: 0;
+  right: 0;
+  top: -8px;
+  margin: 0 auto;
+  z-index: 999;
+}
+
+.download-app .hide img {
+  margin-top: 18px;
+  width: 90px;
+  height: 100%;
+}
+
+.user-info {
+  display: flex;
+}
+
+.cart {
+  width: 120px;
+  margin-left: 15px;
+  text-align: center;
+  background-color: #424242;
+}
+
+.user-info .cart:hover {
+  color: #ff6700;
+  background-color: #fff;
+}
+
+.top-header {
+  height: 100px;
+}
+
+.top-header .w {
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.top-header .logo a {
+  display: block;
+  width: 56px;
+  height: 56px;
+  margin-right: 178px;
+  font-size: 0;
+  background-image: url('../../pics/logo-mi2.png');
+  background-size: cover;
+}
+
+.top-header .menu {
+  display: flex;
+  font-size: 16px;
+}
+
+.top-header .menu a {
+  display: block;
+  height: 100px;
+  line-height: 100px;
+  padding: 0 10px;
+}
+
+.top-header .menu a:hover {
+  color: #ff6700;
+}
+
+.search-form {
+  display: flex;
+  flex: auto;
+  justify-content: end;
+}
+
+.search-form input {
+  box-sizing: border-box;
+  width: 245px;
+  height: 50px;
+  border: 1px solid #e0e0e0;
+  border-right: none;
+  outline: none;
+  padding: 0 6px;
+}
+
+.search-form button {
+  box-sizing: border-box;
+  height: 50px;
+  width: 50px;
+  border: 1px solid #e0e0e0;
+  background-color: white;
+  font-size: 20px;
+  color: #616161;
+}
+
+.search-form button:hover {
+  background-color: #ff6700;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.search-form input:focus,
+.search-form input:focus+button {
+  border-color: #ff6700;
+}

@@ -1,0 +1,23 @@
+1. How to set :hover to control multiple elements' actions? For example, hover on the div change the background color of the div and the font color of inside the div. 
+  - :hover is pseudo class.
+  - when select the :hover, you can do something for itself or other selects.
+  - it is impossible to affect the :hover element and other element simultaneously.
+
+2. How to make image slider?
+  - this effect can be implement by Javascript.
+
+3. How to centralize a <div> inside a <div>?
+  - positioning
+  - box model
+
+4. How to use pseudo elements?
+  - selector::after or selector::before, it can add new element after or before the selector.
+
+5. How to understand 'display: table'?
+  - Make an element behave like a <table>
+  - Unlike regular block-level elements, table cells allow easy vertical alignment.
+  - Fix container's height to collapse caused by float.
+
+6. What does 'flex:auto' do?
+  - it is work on flex items (children of a flex container)
+  - if 'flex' property set to 'auto', the rest space from container will all belong to the flex item.
