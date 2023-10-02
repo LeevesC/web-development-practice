@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grid practice using grid-area</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: bisque;
+    }
+
+    .main {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(4, 200px);
+      grid-template-rows: 100px 200px 200px 100px;
+      grid-template-areas: 
+        "hd hd hd hd"
+        "lm up up up"
+        'lm down down down'
+        'bt bt bt bt';
+        gap: 10px;
+    }
+
+    .head {
+      grid-area: hd;
+      border: 1px solid;
+    }
+    .left-menu {
+      grid-area: lm;
+      border: 1px solid;
+    }
+    .half-up {
+      grid-area: up;
+      border: 1px solid;
+    }
+    .half-down {
+      grid-area: down;
+      border: 1px solid;
+    }
+    .bottom {
+      grid-area: bt;
+      border: 1px solid;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="head">Header</div>
+    <div class="left-menu">menu</div>
+    <div class="half-up">up content</div>
+    <div class="half-down">down content</div>
+    <div class="bottom">bottom</div>
+  </div>
+</body>
+</html>
