@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grid practice</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      background-color: rgb(233, 255, 255);
+    }
+    .main {
+      display: grid;
+      grid-template-columns: repeat(200px, 4);
+      grid-template-rows: 100px 200px 200px 100px;
+      width: 1000px;
+      height: 1500px;
+      margin: 10px auto;
+      background-color: bisque;
+      gap: 5px;
+    }
+
+    .head {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      border: 1px solid;
+    }
+
+    .menu {
+      grid-row-start: 2;
+      grid-row-end: 4;
+      border: 1px solid;
+    }
+    .half-up {
+      grid-column-start: 2;
+      grid-column-end: 5;
+      border: 1px solid;
+    }
+    .img {
+      background-color: rgb(173, 173, 239);
+    }
+    .bottom {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      border: 1px solid;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="head">Header</div>
+    <div class="menu">left-menu</div>
+    <div class="half-up">half-up content</div>
+    <div class="img"></div>
+    <div class="img"></div>
+    <div class="img"></div>
+    <div class="bottom">bottom</div>
+  </div>
+</body>
+</html>
