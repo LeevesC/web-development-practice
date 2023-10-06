@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>responsive page</title>
+  <script src="https://kit.fontawesome.com/feee628af3.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ul {
+      list-style-type: none;
+    }
+    .top-bar {
+      height: 60px;
+      background-color: rgb(0, 0, 0);
+      display: flex;
+      align-items: center;
+      color: white;
+      padding: 0 40px;
+      position: relative;
+    }
+    .svg {
+      width: 100px;
+    }
+    .top-bar .space {
+      flex: auto;
+    }
+    .top-bar h1 a svg {
+      width: 34px;
+      height: 34px;
+    }
+    .top-bar h1 {
+      height: 34px;
+    }
+    .top-bar .user-info {
+      margin-right: 30px;
+    }
+    .user-info .login {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+      position: absolute;
+      width: 100%;
+      background-color: #000;
+      left: 0;
+      top: 60px;
+    }
+    .user-info:active .login {
+      display: flex;
+    }
+    .user-info .login a {
+      text-decoration: none;
+      text-align: center;
+      flex: auto;
+      color: white;
+    }
+    .menu .menu-inner {
+      display: none;
+      position: absolute;
+      width: 100%;
+      top: 60px;
+      left: 0;
+      background-color: rgb(30, 30, 30);
+    }
+    .menu:active .menu-inner {
+      display: block;
+    }
+    .menu .menu-inner a {
+      display: flex;
+      padding: 30px 0;
+      text-decoration: none;
+      align-items: center;
+      justify-content: space-between;
+      color:  white;
+      font-size: 24px;
+      margin: 0 40px;
+    }
+
+    @media (min-width: 800px) {
+      .menu i,
+      .user-info i {
+        display: none;
+      }
+      .top-bar .user-info .login {
+        display: none;
+      }
+      .top-bar .menu .menu-inner {
+        display: flex;
+        flex-flow: row;
+        position: static;
+        width: auto;
+
+      }
+      .menu .menu-inner a {
+        display: block;
+        text-decoration: none;
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+      }
+      .top-bar .space {
+        display: none;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <h1>
+      <a href="#">
+        <svg data-v-777bda80="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 808 808" class="mi-logo"><g data-v-777bda80=""><path data-v-777bda80="" fill="#ff6900" d="M723.79,84.42C647.55,8.48,537.94,0,404,0,269.89,0,160.12,8.58,83.92,84.72S0,270.43,0,404.39,7.74,648,84,724.14,269.9,808,404,808s243.85-7.71,320-83.86,84-185.78,84-319.75C808,270.25,800.16,160.54,723.79,84.42Z"></path> <path data-v-777bda80="" fill="#fff" d="M374.26,553.72a5,5,0,0,1-5.06,5H300.3a5.05,5.05,0,0,1-5.12-5V373.53a5.05,5.05,0,0,1,5.12-5h68.9a5,5,0,0,1,5.06,5Z"></path> <path data-v-777bda80="" fill="#fff" d="M509.18,553.72a5.05,5.05,0,0,1-5.09,5H438.5a5,5,0,0,1-5.1-5V398.26c-.07-27.15-1.62-55-15.64-69.06-12-12.09-34.51-14.86-57.88-15.44H241a5,5,0,0,0-5.07,5v235a5.07,5.07,0,0,1-5.12,5H165.16a5,5,0,0,1-5.06-5V254.31a5,5,0,0,1,5.06-5H354.52c49.49,0,101.22,2.26,126.74,27.81s27.92,77.3,27.92,126.85Z"></path> <path data-v-777bda80="" fill="#fff" d="M644.29,553.72a5.06,5.06,0,0,1-5.09,5H573.57a5,5,0,0,1-5.08-5V254.31a5,5,0,0,1,5.08-5H639.2a5.06,5.06,0,0,1,5.09,5Z"></path></g></svg>
+      </a>
+    </h1>
+    <div class="space"></div>
+    <div class="user-info">
+      <i class="fa-solid fa-user"></i>
+      <div class="login">
+        <a href="#">login</a>
+        <span class="line">|</span>
+        <a href="#">register</a>
+      </div>
+    </div>
+    <div class="menu">
+      <i class="fa-solid fa-bars"></i>
+      <ul class="menu-inner">
+        <li>
+          <a href="#">
+            <span>小米官网</span>
+            <i class="fa-solid fa-angle-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>小米官网</span>
+            <i class="fa-solid fa-angle-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>小米官网</span>
+            <i class="fa-solid fa-angle-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>小米官网</span>
+            <i class="fa-solid fa-angle-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>小米官网</span>
+            <i class="fa-solid fa-angle-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>小米官网</span>
+            <i class="fa-solid fa-angle-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>小米官网</span>
+            <i class="fa-solid fa-angle-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>小米官网</span>
+            <i class="fa-solid fa-angle-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>小米官网</span>
+            <i class="fa-solid fa-angle-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>小米官网</span>
+            <i class="fa-solid fa-angle-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>小米官网</span>
+            <i class="fa-solid fa-angle-right"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
