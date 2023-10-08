@@ -1,0 +1,13 @@
+1. How to set a background-image cover the view-window 100% without scroll bar?
+  - vh (viewport height)
+  - 100vh stands for 100% of the visible area height of the web page.
+  - overflow: hidden; contents that overflows will be hidden.
+
+2. How to implement the animation?
+  - create a class element of animation;
+  - using transform and animation;
+  - add this class to elements which you want they animating. 
+
+3. How to set a hover off effect?
+  - transition duration time in the element not in hover.
+  - So every transition (no matter hover or hover off) will be activated.

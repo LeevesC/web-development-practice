@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .one,
+    .two,
+    .thr {
+      width: 300px;
+      height: 200px;
+      margin: 20px auto;
+      background-color: antiquewhite;
+    }
+
+    .two {
+      background-color: rgb(235, 200, 155);
+    }
+    .two.anima {
+      animation-delay: 500ms;
+    }
+
+    .thr {
+      background-color: rgb(238, 183, 112);
+    }
+    .thr.anima {
+      animation-delay: 900ms;
+    }
+
+    .anima {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: moveup 300ms linear forwards;
+    }
+
+    @keyframes moveup {
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="one anima"></div>
+  <div class="two anima"></div>
+  <div class="thr anima"></div>
+</body>
+</html>
