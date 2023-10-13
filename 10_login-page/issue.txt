@@ -1,0 +1,46 @@
+1. When setting margin-top for a element, which top is referring to?
+  - This situation is called 'collapsing margins';
+  - When two vertical margins come into contact with each other, they 'collapse' into a single margin. The larger of the two margins will be used, and the smaller one essentially disappears;
+  - How to solve this issue?
+    - Set a padding or border on the parent element;
+    - Use overflow, setting any value other than the default ('visible') on the parent element;
+      - the default value is 'visible' for overflow which means the content is displayed outside the box if it overflows.
+
+2. How to check which is the container block for a element?
+  - The containing block of an element is the nearest ancestor element.
+  - Different positioning setting lead to different containing block for an element.
+
+3. What's the differences between 'div > p' and 'div p'?
+  - '>' which is Child selector, 'div > p' selects all <p> elements that are direct children of the <div> element.
+  - ' ' (space) is Descendant Selector, 'div p' selects all <p> that are descendants of the <div>.
+  - Warning: Descendant regardless of how deeply nested they are under the parent element.
+ 
+4. How to activate the checkbox when click the label text behind it?
+  - This knowledge belongs to Form element and different types of <input> elements.
+  - <input type="checkbox" id="scales"> <label for="scales">Scales</label> same id value of <input> and for value of <label> can implement the effect.
+
+5. What does <form> usually do?
+  - if the page needs customer input some information and interact with back-end.
+  - Wrap <input> element up within <form> which is good idea.
+
+6. Using absolute positioning to centralize an element.
+  - Setting position:absolute to the element that you want to centralizing;
+  - left:50% and top:50% to move the element 50% space based on its father container block;
+  - transform: translate(-50%, -50%) to move back  50% space based on itself.
+
+7. What's the benefits of using a pseudo-element, like ::before, to set a background image instead of setting it directly on the body?
+  - Layering: Pseudo-elements act as child layers of the element they are attached to. This means you can layer the background image on top of the actual body background (or below other content) and apply effects or styles separately to each layer.
+  - Image Scaling & Positioning: By using a pseudo-element, you can have better control over the image's size and positioning. You can make it cover the viewport, position it differently, or even animate its properties without affecting the actual content of the body.
+  - Effects & Filters: You can apply CSS effects, like filter or opacity, to the pseudo-element without affecting the body's actual content. For instance, if you want a slightly faded or tinted background image without affecting the text and other elements, this method is handy.
+  - Content Separation: It helps separate the decorative aspects (like background images) from the content structure. This separation can make it clearer when styling or modifying the design, as the decorative aspects are isolated from the content.
+  - Performance: In some cases, especially with animations or dynamic changes, manipulating a pseudo-element might be more performant than causing repaints on the main body content.
+
+8. How to use sibling combinator to select elements?
+  - Sibling combinators are used to select elements that are siblings of a given element. 
+  - The adjacent sibling combinator (+) selects the element immediately following another element.
+  - The general sibling combinator (~) selects all elements that share the same parent.
+
+9. How to use the pseudo-class :is()?
+  - :is() is a logical combination pseudo-class.
+  - matches-any pseudo-class.
+  - It takes a comma-separated list of selectors and matches if any of the selectors inside the parentheses match.

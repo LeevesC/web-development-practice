@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+
+.body {
+  height: 100vh;
+  width: 100%;
+  background-image: url('./images/hero-img.jpg');
+  background-size: auto;
+}
+
+.body svg {
+  margin-top: 20px;
+  margin-left: 60px;
+  transform: scale(1.5);
+}
+.body svg:hover {
+  cursor: pointer;
+}
+.body .table {
+  width: 445px;
+  height: 560px;
+  background-color: rgba(1, 1, 2, 0.8);
+  margin: 20px auto;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.table h1 {
+  margin-top: 20px;
+  margin-left: 65px;
+  font-size: 40px;
+  color: white;
+}
+
+.table .input {
+  margin: 20px auto 0 auto;
+  
+}
+.table .input input {
+  display: block;
+  width: 310px;
+  height: 50px;
+  border: none;
+  border-radius: 3px;
+  padding: 0 18px;
+  background-color: #333333ff;
+}
+.table .input input::placeholder {
+  color: #8c8c8cff;
+  font-size: 16px;
+  font-weight: bold;
+}
+.table .input input:focus {
+  background-color: #444444ff;
+  outline: none;
+
+}
+
+.table .input input:nth-of-type(1) {
+  margin-bottom: 10px;
+}
+
+.table .sign {
+  margin: 30px auto 0 auto;
+  border: 1px solid;
+  width: 310px;
+  height: 50px;
+  background-color: #e50815;
+  border: none;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+}
+.table .sign:hover {
+  background-color: #c40912ff;
+  cursor: pointer;
+}
+.table .menu {
+  width: 310px;
+  margin: 10px auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.table .menu p {
+  display: inline-block;
+  color: #b3b3b3ff;
+}
+.table .menu p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.table .menu label {
+  flex: auto;
+  margin-left: 5px;
+  color: #b3b3b3ff;
+}
+
+.table .text {
+  width: 310px;
+  margin: 70px auto 0 auto;
+}
+.table .text p {
+  color: #b3b3b3ff;
+}
+.table .text .new {
+  font-size: 18px;
+}
+.table .text .new span {
+  color: white;
+}
+.table .text .new span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.table .text .learn {
+  margin-top: 20px;
+  font-size: 15px;
+}
+.table .text .learn a {
+  text-decoration: none;
+  color: #0171ebff;
+}
+.table .text .learn a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* ----- 745px responsive ----- */
+@media (max-width: 740px) {
+  .body {
+    background-image: none;
+    background-color: black;
+  }
+  .body .table {
+    width: 100%;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  .table h1 {
+    margin-left: 0px;
+  }
+
+  .table .input input {
+    width: 100%;
+  }
+  .table .input,
+  .table .sign,
+  .table .menu,
+  .table .text {
+    width: 100%;
+  }
+}
