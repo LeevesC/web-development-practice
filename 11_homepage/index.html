@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>homepage</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <nav>
+    <div class="logo"><a href="#">CodingNepal</a></div>
+    <ul id="menuList">
+      <li><img src="./images/times.svg" alt=""></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Service</a></li>
+      <li><a href="#">Project</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <img src="./images/bars.svg" alt="bar" id="toggleImage">
+  </nav>
+
+  <div class="main">
+    <div class="left">
+      <h1>Top free tool and extension to radiply grow you business</h1>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis,
+        architecto? Consectetur enim obcaecati velit quibusdoam iure,
+        perspiciatis accusantium, voluptatibus possimus cum voluptates
+        dolorum optio ab vitae. Praesentium voluptas quia voluptates at
+        aperiam aliquid vitae autem!
+      </p>
+      <div class="button">
+        <button class="read">Read More</button>
+        <button class="contact">Contact Us</button>
+      </div>
+    </div>
+    <div class="right">
+      <img src="./images/hero.png" alt="pic">
+    </div>
+  </div>
+
+  <div class="background">
+    <img src="./images/bg-dot.png" alt="" class="top-left">
+    <img src="./images/bg-round.png" alt="" class="top-mid">
+    <img src="./images/bg-tree.png" alt="" class="bottom-mid">
+    <img src="./images/bg-dot.png" alt="" class="bottom-right">
+    <img src="./images/bg-bottom-hero.png" alt="" class="bottom-back">
+  </div>
+<script>
+
+  document.getElementById("toggleImage").addEventListener("click", function() {
+    var menuList = document.getElementById("menuList");
+    
+    if (menuList.style.transform === "translateX(0)") {
+      menuList.style.transform = "translateX(-60vw)"; 
+    } else {
+      menuList.style.transform = "translateX(0)";
+    }
+  });
+
+</script>
+</body>
+</html>

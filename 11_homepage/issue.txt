@@ -1,0 +1,26 @@
+1. Why <button> has two border, when set border color to a <button> it just applied on up border.
+
+2. How to setting a <div> width and height into the window view?
+  - length units can be relative or absolute.
+  - vh, represents a percentage of the height of the viewport's initial containing block.
+  - vw, width of the viewport.
+
+3. When setting 'text-align: center' for a container, the elements inside it will be centralized, but how to set an specific element get out of this effect still keep left?
+
+4. How to add a svg image into html?
+
+5. How to control the size of an SVG?
+
+6. How to make the image fill the size of its parent container without changing its aspect ratio.
+
+7. How to set img as background image and always at the bottom of the viewpoint.
+
+8. different between gap and margin.
+
+9. different between <div> and <header> <nav> <section>
+
+10.   min-height: 100vh;width: 100%; what's the meaning of width 100% in that?
+  when set 100% width to a image, the size of the image become small.
+
+11. position fixed is like absolute to the viewpoint ?
+
