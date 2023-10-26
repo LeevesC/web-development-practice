@@ -1,26 +1,52 @@
 1. Why <button> has two border, when set border color to a <button> it just applied on up border.
+  - Because the button border has shadow by default.
 
 2. How to setting a <div> width and height into the window view?
   - length units can be relative or absolute.
   - vh, represents a percentage of the height of the viewport's initial containing block.
   - vw, width of the viewport.
+  - when setting main <div> height:100vh and width:100vw and no box-sizing:border-box there will have scrolling bar?
+    - due to the default margin of the <body> element.
+    - and the additional padding user added to the .main <div>.
+    - box-sizing:border-box can solve padding overflow.
 
 3. When setting 'text-align: center' for a container, the elements inside it will be centralized, but how to set an specific element get out of this effect still keep left?
+  - Normally text-align:center effects on those inline and inline-block element.
+  - To get out of the affect, just set the element as block.
 
-4. How to add a svg image into html?
+4. difference between inline and inline-block.
+  - inline (like <span> <a> <strong>) flow within the content.
+  - inline elements can't be set width, height, margin and padding.
+  - inline-block combines features of both inline and block.
 
 5. How to control the size of an SVG?
+  - setting its' width of height as <img>
+  - when setting a specific width for an <img> element without setting its height, the image will scale proportionally to maintain its original aspect ratio.
 
-6. How to make the image fill the size of its parent container without changing its aspect ratio.
+7. How to make the image fill the size of its parent container without changing its aspect ratio.
+  - if you have not set width and height for its parent container.
+    - image will fill the parent container automatically.
+  - if you have set width for its parent container.
+    - set <img> for width:100% and object-fit: cover;
 
-7. How to set img as background image and always at the bottom of the viewpoint.
+8. How to set img as background image and always at the bottom of the viewpoint.
+  - setting background-image for a element in CSS is the best way.
 
-8. different between gap and margin.
+9. different between gap and margin.
+  - gap is used with Grid and Flexbox layout, which defines the space between grid/flex items.
+  - margin is used for all types of elements.
 
-9. different between <div> and <header> <nav> <section>
+10. different between <div> and <header> <nav> <section>.
+  - <div> is a generic container.
+  - using <div> when there isn't a more appropriate semantic element available.
+  - <header> <nav> <section> are semantic container.
+  - <header> <nav> <section> like labeled <div> especially for SEO.
 
-10.   min-height: 100vh;width: 100%; what's the meaning of width 100% in that?
-  when set 100% width to a image, the size of the image become small.
+11. min-height: 100vh;width: 100%; what's the meaning of width 100% in that?
+  - 100% for width and height means its width or height is as length as its parent container's.
 
-11. position fixed is like absolute to the viewpoint ?
+12. position fixed is like absolute to the viewpoint ?
+  - fixed works exactly the same way as absolute positioning.
+  - absolute positioning relative to its nearest positioned ancestor.
+  - fixed relative to visible portion of the viewport.
 
