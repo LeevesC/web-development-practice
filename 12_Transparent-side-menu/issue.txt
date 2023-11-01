@@ -1,0 +1,5 @@
+1. How to set the style of the image in the content: url?
+
+2. How to change the color for an icon?
+
+3. How to set a glowing effect with a transparent color on border?

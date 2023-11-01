@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <title>transparent-side-bar</title>
+  <script src="https://kit.fontawesome.com/feee628af3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="main">
+    <i class="fa-solid fa-bars" id="x"></i>
+    <nav class="menu-item">
+      <div class="top-group">
+        <div class="logo">
+          <span>HelloWorld</span>
+          <i class="fa-solid fa-xmark" id="x"></i>
+        </div>
+        <ul class="menu-list">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Shortcuts</a></li>
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </div>
+
+      <ul class="bottom">
+        <li><i class="fa-brands fa-facebook-f"></i></li>
+        <li><i class="fa-brands fa-twitter"></i></li>
+        <li><i class="fa-brands fa-instagram"></i></li>
+        <li><i class="fa-brands fa-youtube"></i></li>
+      </ul>
+    </nav>
+
+  </div>
+  <script>
+    const cancelButton = document.querySelectorAll("#x");
+    const main = document.querySelector(".main")
+
+    cancelButton.forEach(i => {
+      i.addEventListener("click", ()=>main.classList.toggle("hidden"));
+    })
+  </script>
+</body>
+</html>
