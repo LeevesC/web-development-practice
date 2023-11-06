@@ -1,5 +1,20 @@
-1. How to set the style of the image in the content: url?
+1. How to change the color for an icon?
+  - Using 'icon font';
+  - Icon fonts can be styled with CSS in much the same way as text.
 
-2. How to change the color for an icon?
+2. How to set a glowing effect with a transparent color on border?
+  - setting box-shadow to a border.
 
-3. How to set a glowing effect with a transparent color on border?
+3. What is the best way to set background image?
+  - Using '::before' Pseudo-element.
+    creates a separate layer for the background image;
+    allows for more complex styling and effects since the pseudo-element can be animated and transformed independently from the <div>.
+  - Using background image directly.
+    Well-supported across all browsers;
+    The styling and effects are limited to the <div> itself;
+
+4. box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+  - the first 0 represents the horizontal offset of the shadow;
+  - the second 0 represents the vertical offset of the shadow;
+  - the third value is the blur radius, determines how much the shadow is blurred;
+  - rgba is color and opacity of the shadow;
