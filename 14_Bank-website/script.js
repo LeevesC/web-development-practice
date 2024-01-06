@@ -29,24 +29,72 @@ document.addEventListener('keydown', function (e) {
 });
 
 ///////////////////// Navigator ////////////////////
-
+// Button fade out animation
 // How to use 'Event Delegation'
-const navigator = document.querySelector('.nav');
-const navLinks = navigator.querySelectorAll('.nav__link');
-
-
-navigator.addEventListener('mouseover', (e) => {
-  if(e.target.classList.contains('nav__link')) {
-    navLinks.forEach(link => {
-      if(link !== e.target) {
-        link.style.opacity = 0.3;
-      }
+// advanced working with function
+const handleHover = function (e, value) {
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('.nav__logo');
+    siblings.forEach(element => {
+      if (element !== link) element.style.opacity = value;
     });
-  };
-});
-
-navigator.addEventListener('mouseout', e => {
-  if(e.target.classList.contains('nav__link')) {
-    navLinks.forEach(link => link.style.opacity = 1);
+    logo.style.opacity = value;
   }
-})
+}
+
+const nav = document.querySelector('.nav');
+nav.addEventListener('mouseover', e => handleHover(e, 0.5));
+nav.addEventListener('mouseout', e => handleHover(e, 1));
+
+// viewport scrolling
+// How to use scrollIntoView();
+// Regular Expression
+const scrollSection = function (e) {
+  e.preventDefault();
+  if (e.target.classList.contains('nav__link')) {
+    const sectionId = e.target.getAttribute('href');
+    const validRegex = /^#[\w-]+$/;
+    if (validRegex.test(sectionId)) {
+      document.querySelector(sectionId).scrollIntoView({behavior: 'smooth'});
+    }
+  }
+}
+nav.addEventListener('click', scrollSection);
+
+// Header sticky
+// how to get the size and position relate to viewport of a element
+// how to listen distance changing (what event)
+
+const sec1 = document.getElementById('section--1');
+// const threshold = nav.getBoundingClientRect().height;
+
+// window.addEventListener('scroll', () => {
+//   const distance = sec1.getBoundingClientRect().top;
+//   if (distance < threshold) {
+//     nav.classList.add('sticky');
+//   } else {
+//     nav.classList.remove('sticky');
+//   }
+// })
+
+// how to implement IntersectionObserver()
+const header = document.querySelector('.header');
+const navHeight = nav.getBoundingClientRect().height;
+
+const stickyNav = function (entries) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
+  console.log(entry.isIntersecting);
+};
+
+const options = {
+  root: null,
+  rootMargin: `-${navHeight}px`,
+  threshold: 0,
+};
+
+const headerObserver = new IntersectionObserver(stickyNav, options);
+headerObserver.observe(header);
