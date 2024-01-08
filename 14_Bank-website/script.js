@@ -87,7 +87,7 @@ const stickyNav = function (entries) {
   const [entry] = entries;
   if (!entry.isIntersecting) nav.classList.add('sticky');
   else nav.classList.remove('sticky');
-  console.log(entry.isIntersecting);
+  // console.log(entry.isIntersecting);
 };
 
 const options = {
@@ -98,3 +98,11 @@ const options = {
 
 const headerObserver = new IntersectionObserver(stickyNav, options);
 headerObserver.observe(header);
+
+///////////////////// Header ////////////////////
+// click button jump to a section
+
+const btnScroll = header.querySelector('.btn--scroll-to');
+btnScroll.addEventListener('click', () => {
+  sec1.scrollIntoView({ behavior: 'smooth'});
+});
