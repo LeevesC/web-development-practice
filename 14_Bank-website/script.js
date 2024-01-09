@@ -106,3 +106,22 @@ const btnScroll = header.querySelector('.btn--scroll-to');
 btnScroll.addEventListener('click', () => {
   sec1.scrollIntoView({ behavior: 'smooth'});
 });
+
+///////////////////// Reveal sections ////////////////////
+const sects = document.querySelectorAll('.section');
+
+const sectionShow = function(entries, observer) {
+  const [entry] = entries;
+  if (entry.isIntersecting) entry.target.classList.remove('section--hidden');
+  observer.unobserve(entry.target);
+}
+const optionSec = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.15,
+}
+const secShow = new IntersectionObserver(sectionShow, optionSec);
+
+sects.forEach( (section) => {
+  secShow.observe(section);
+})
