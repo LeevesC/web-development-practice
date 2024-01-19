@@ -178,3 +178,31 @@ const imgOptions = {
 
 const imgInter = new IntersectionObserver(imgAct, imgOptions);
 imgs.forEach((img) => imgInter.observe(img));
+
+///////////////////// Section2 Tab highlight ////////////////////
+const operationContainer = document.querySelector('.operations__tab-container');
+const operaTabs = operationContainer.querySelectorAll('.operations__tab');
+const operaContent = document.querySelectorAll('.operations__content');
+
+// My way 
+// operationContainer.addEventListener('click', (e) => {
+//   if(e.target.classList.contains('operations__tab')) {
+//     operaTabs.forEach(tab => tab.classList.remove('operations__tab--active'));
+//     e.target.classList.add('operations__tab--active');
+
+//     const operationId = e.target.dataset.tab;
+//     operaContent.forEach(cont => cont.classList.remove('operations__content--active'));
+//     operaContent[operationId-1].classList.add('operations__content--active');
+//   }
+// })
+
+// using Early return
+operationContainer.addEventListener('click', (e) => {
+  const clicked = e.target.closest('.btn');
+  if(!clicked) return;
+  operaTabs.forEach(tab => tab.classList.remove('operations__tab--active'));
+  operaContent.forEach(cont => cont.classList.remove('operations__content--active'));
+
+  clicked.classList.add('operations__tab--active');
+  document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add('operations__content--active');
+})
