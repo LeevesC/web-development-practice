@@ -155,7 +155,6 @@ const imgs = sec1.querySelectorAll("img");
 //     });
 // });
 
-
 // Using Intersection Observer for lazy loading the image
 const imgAct = function (entries, observer) {
   const [entry] = entries;
@@ -164,7 +163,7 @@ const imgAct = function (entries, observer) {
   // entry.target.setAttribute("src", realImg);
   entry.target.src = entry.target.dataset.src;
 
-  entry.target.addEventListener("load", function() {
+  entry.target.addEventListener("load", function () {
     this.classList.remove("lazy-img");
   });
   observer.unobserve(entry.target);
@@ -180,11 +179,11 @@ const imgInter = new IntersectionObserver(imgAct, imgOptions);
 imgs.forEach((img) => imgInter.observe(img));
 
 ///////////////////// Section2 Tab highlight ////////////////////
-const operationContainer = document.querySelector('.operations__tab-container');
-const operaTabs = operationContainer.querySelectorAll('.operations__tab');
-const operaContent = document.querySelectorAll('.operations__content');
+const operationContainer = document.querySelector(".operations__tab-container");
+const operaTabs = operationContainer.querySelectorAll(".operations__tab");
+const operaContent = document.querySelectorAll(".operations__content");
 
-// My way 
+// My way
 // operationContainer.addEventListener('click', (e) => {
 //   if(e.target.classList.contains('operations__tab')) {
 //     operaTabs.forEach(tab => tab.classList.remove('operations__tab--active'));
@@ -197,12 +196,88 @@ const operaContent = document.querySelectorAll('.operations__content');
 // })
 
 // using Early return
-operationContainer.addEventListener('click', (e) => {
-  const clicked = e.target.closest('.btn');
-  if(!clicked) return;
-  operaTabs.forEach(tab => tab.classList.remove('operations__tab--active'));
-  operaContent.forEach(cont => cont.classList.remove('operations__content--active'));
+operationContainer.addEventListener("click", (e) => {
+  const clicked = e.target.closest(".btn");
+  if (!clicked) return;
+  operaTabs.forEach((tab) => tab.classList.remove("operations__tab--active"));
+  operaContent.forEach((cont) =>
+    cont.classList.remove("operations__content--active")
+  );
 
-  clicked.classList.add('operations__tab--active');
-  document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add('operations__content--active');
+  clicked.classList.add("operations__tab--active");
+  document
+    .querySelector(`.operations__content--${clicked.dataset.tab}`)
+    .classList.add("operations__content--active");
+});
+
+///////////////////// Section3 Carousel ////////////////////
+const slides = document.querySelectorAll(".slide");
+const leftBtn = document.querySelector(".slider__btn--left");
+const rightBtn = document.querySelector(".slider__btn--right");
+// const dots = document.querySelectorAll('.dots__dot');
+
+// const rotateSlide = function (i) {
+//   slides.forEach((s, ind) => {
+//     s.style.transform = `translateX(${100*(ind + i)}%)`;
+//   });
+//   dots.forEach((d) => {
+//     d.classList.remove('dots__dot--active');
+//   })
+//   dots[`${Math.abs(i)}`].classList.add('dots__dot--active');
+// };
+
+// rotateSlide(0);
+// let i = 0;
+
+// leftBtn.addEventListener('click', () => {
+//   i++;
+//   if (i>0) i = -2;
+//   rotateSlide(i);
+// });
+// rightBtn.addEventListener('click', () => {
+//   i--;
+//   if(i <= -(slides.length)) i = 0;
+//   rotateSlide(i);
+// })
+
+// the way above to control the dots is fixed.
+// If the testimonials adding to 4 or 5,
+// we have to change the HTML file, which is annoying
+
+// So, below is better way.
+const dotsContainer = document.querySelector(".dots");
+const dotsGene = function () {
+  slides.forEach((_, i) => {
+    dotsContainer.insertAdjacentHTML(
+      "beforeend",
+      `<button class="dots__dot" data-slide="${i}"></button>`
+    );
+  });
+};
+// initialize dots
+dotsGene();
+
+const dots = document.querySelectorAll('.dots__dot');
+const rotateSlide = function (i) {
+  slides.forEach((s, ind) => {
+    s.style.transform = `translateX(${100*(ind + i)}%)`;
+  });
+  dots.forEach((d) => {
+    d.classList.remove('dots__dot--active');
+  })
+  dots[`${Math.abs(i)}`].classList.add('dots__dot--active');
+};
+
+rotateSlide(0);
+let i = 0;
+
+leftBtn.addEventListener('click', () => {
+  i++;
+  if (i>0) i = -2;
+  rotateSlide(i);
+});
+rightBtn.addEventListener('click', () => {
+  i--;
+  if(i <= -(slides.length)) i = 0;
+  rotateSlide(i);
 })
