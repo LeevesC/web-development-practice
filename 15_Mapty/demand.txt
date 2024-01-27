@@ -1,0 +1,11 @@
+# Features
+1. Loading the map at my location.
+2. Click on the map at any point, and pop up a form waiting for entering.
+3. Form configuration
+  - titles change as different type;
+  - check values that users fill in after ENTER;
+  - click the submitted form, map moved to centralize the PIN;
+4. Pin on the map based on the location of the popup.
+  - border color based on different type;
+  - description based on type and date;
+5. Submitted forms saved in local storage.
