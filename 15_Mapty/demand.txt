@@ -1,11 +1,27 @@
 # Features
 1. Loading the map at my location.
+  - a function for requesting and getting GPS position.
+  - a function for initializing the map.
+
 2. Click on the map at any point, and pop up a form waiting for entering.
+  - event on map listening click event and getting the position of the point.
+  - show the form.
+  - add a workout card and a marker on map.
+
 3. Form configuration
   - titles change as different type;
   - check values that users fill in after ENTER;
   - click the submitted form, map moved to centralize the PIN;
+
 4. Pin on the map based on the location of the popup.
   - border color based on different type;
   - description based on type and date;
+
 5. Submitted forms saved in local storage.
+
+//################ issues ###################
+1. How to refresh the form element for each click on map?
+
+
+2. Do not add an event in an other adding event function.
+  - This way will 100% cause mess.
