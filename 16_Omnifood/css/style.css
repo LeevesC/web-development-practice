@@ -35,6 +35,7 @@ Paragraph default: 1.6
 
 --- 06 Border-radius
 default: 9px  
+medium: 11px
 
 --- 07 Whitespace
 
@@ -131,7 +132,31 @@ body {
   transition: all 500ms;
 }
 
+.link:link,
+.link:visited {
+  display: inline-block;
+  color: #e67e22;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+.link:hover,
+.link:active {
+  color: #cf711f;
+  border-bottom: 1px solid transparent;
+}
+
 .margin-right-sm {
   margin-right: 1.6rem !important;
 }
+.margin-bottom-md {
+  margin-bottom: 4.8rem !important;
+}
 
+.center-text {
+  text-align: center;
+}
+
+strong {
+  font-weight: 600;
+}
