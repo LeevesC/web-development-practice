@@ -23,10 +23,12 @@ Paragraph default: 1.6
 
 --- 02 Colors
 - Primary: #e67e22
-- Tints: #fdf2e9
+- Tints: #fdf2e9 #fae5d3
+
 - Shades: #cf711f
 - Accents: 
 - Greys: 
+#6f6f6f (lightest grey allowed on #fdf2e9)
 #555 
 #333
 
@@ -74,6 +76,9 @@ body {
   display: grid;
   column-gap: 6.4rem;
   row-gap: 9.6rem;
+}
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
 }
 .grid--2-cols {
   grid-template-columns: repeat(2, 1fr);
@@ -132,6 +137,28 @@ body {
   transition: all 500ms;
 }
 
+.btn--full:link,
+.btn--full:visited {
+  background-color: #e67e22;
+  color: #fff;
+}
+.btn--full:hover,
+.btn--full:active {
+  background-color: #cf711f;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #fdf2e9;
+  /* border: 2px solid #fff; */
+  box-shadow: 0 0 0 3px #fff inset;
+}
+
 .link:link,
 .link:visited {
   display: inline-block;
@@ -144,6 +171,24 @@ body {
 .link:active {
   color: #cf711f;
   border-bottom: 1px solid transparent;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.list-item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #e67e22;
 }
 
 .margin-right-sm {
