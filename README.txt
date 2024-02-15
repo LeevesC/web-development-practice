@@ -1,0 +1,1 @@
+This repository including different practice based on CSS and JavaScript. 
