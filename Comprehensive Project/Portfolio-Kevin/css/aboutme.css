@@ -1,0 +1,61 @@
+.section-aboutme {
+  background-color: #7c7c7c;
+  height: 100vh;
+  padding: 9.6rem 0 12.8rem 0;
+}
+
+.aboutme-img img {
+  display: block;
+  width: 100%;
+  border-radius: 9px;
+}
+
+/* adjust the width ratio */
+.section-aboutme .grid--3--col {
+  grid-template-columns: 1.33fr 1fr 1fr;
+}
+.resume {
+  grid-column: 2 / 4;
+}
+
+.resume h1 {
+  margin-bottom: 0;
+}
+
+.aboutme-text {
+  font-size: 1.8rem;
+  color: #c8c8c8;
+  line-height: 1.35;
+  letter-spacing: 0.75px;
+  margin-bottom: 2.4rem;
+}
+
+/* about me cv */
+.aboutme-cv-nav ul{
+  list-style: none;
+  display: flex;
+  gap: 4.8rem;
+  margin-bottom: 2.4rem;
+}
+
+.cv-nav-link {
+  text-decoration: none;
+  font-size: 2.0rem;
+  color: #c8c8c8;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.description .title {
+  color: #9b0e3a;
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+.description .text {
+  font-size: 1.8rem;
+  color: #c8c8c8;
+}

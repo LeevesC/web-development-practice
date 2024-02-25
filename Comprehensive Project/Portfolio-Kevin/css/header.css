@@ -1,4 +1,4 @@
-
+/* header */
 .header {
   display: flex;
   flex-direction: row;
@@ -23,4 +23,29 @@
   font-size: 2.4rem;
   color: rgb(201, 201, 201);
   font-weight: 300;
+}
+
+/* hero section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.heading-primary span {
+  color: #ff004f;
+}
+
+
+/* background image */
+body {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(235, 151, 78, 0.35),
+    rgba(230, 125, 34, 0.35)
+  ),url('../images/background.png');
 }

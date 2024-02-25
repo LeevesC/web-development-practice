@@ -1,0 +1,72 @@
+.section-contact {
+  background-color: #7c7c7c;
+  height: 100vh;
+  padding: 9.6rem 0 0 0;
+}
+
+/* contact information */
+.cta-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.cta-email,
+.cta-phone {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.cta-info-icon {
+  color: #d21a42;
+  font-size: 2.4rem;
+}
+
+.cta-info-text {
+  font-size: 1.4rem;
+  color: #c8c8c8;
+  line-height: 1.35;
+  letter-spacing: 0.75px;
+  text-decoration: none;
+}
+
+.cta-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  margin-bottom: 4.4rem;  
+}
+
+.cta-social-icon {
+  font-size: 3.2rem;
+  color: #c8c8c8;
+  transition: all 300ms;
+}
+.cta-social-icon:hover {
+  color: #d21a42;
+  transform: translateY(-10%);
+  cursor: pointer;
+}
+
+/* form */
+.contact-form {
+  grid-column: 2 / 4;
+  padding-top: 1.2rem;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  background-color: #232323;
+  color: #c8c8c8;
+  font-size: 1.8rem;
+  padding: 2.0rem 1.8rem;
+  border: none;
+  border-radius: 7px;
+  margin-bottom: 2.4rem;
+}
+.input.text {
+  resize: none;
+}

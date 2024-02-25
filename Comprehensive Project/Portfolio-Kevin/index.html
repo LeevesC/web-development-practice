@@ -12,6 +12,10 @@
 
     <link rel="stylesheet" href="./css/general.css" />
     <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/aboutme.css" />
+    <link rel="stylesheet" href="./css/service.css" />
+    <link rel="stylesheet" href="./css/work.css" />
+    <link rel="stylesheet" href="./css/cta.css" />
 
     <title>Person Portfolio</title>
   </head>
@@ -31,66 +35,196 @@
       </nav>
     </header>
 
-    <section class="hero">
-      <div class="hero container">
-        <h3>UI/UX Designer</h3>
-        <h1 class="heading-primary">Hi, I'm Kevin Jen From Australia</h1>
+    <section class="section-hero">
+      <div class="container hero">
+        <h3 class="heading-tertiary">UI/UX Designer</h3>
+        <h1 class="heading-primary">
+          Hi, I'm <span>Kevin</span><br />Jen From Australia
+        </h1>
       </div>
     </section>
 
     <main>
-      <section class="about-me">
+      <section class="section-aboutme">
         <div class="container grid grid--3--col">
-          <img src="" alt="porftolio picture" />
+          <div class="aboutme-img">
+            <img src="./images/user.png" alt="porftolio picture" />
+          </div>
           <div class="resume">
-            <h2 class="primary-secondary">About Me</h2>
-            <p>
+            <h1 class="heading-primary">About Me</h1>
+            <p class="aboutme-text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
               dolore beatae inventore amet exercitationem impedit aut eos iste
               aperiam sapiente molestiae voluptatibus accusantium voluptate,
-              nulla natus aspernatur, in totam perferendis.
+              nulla natus aspernatur, in totam perferendis. Lorem ipsum dolor
+              sit amet consectetur adipisicing elit. Expedita.
             </p>
-            <div></div>
+            <div class="aboutme-cv">
+              <nav class="aboutme-cv-nav">
+                <ul>
+                  <li><a href="#" class="cv-nav-link">Skills</a></li>
+                  <li><a href="#" class="cv-nav-link">Experience</a></li>
+                  <li><a href="#" class="cv-nav-link">Education</a></li>
+                </ul>
+              </nav>
+              <div class="skills">
+                <div class="description">
+                  <p class="title">UI/UX</p>
+                  <p class="text">Designing Web/App Interfaces</p>
+                </div>
+                <div class="description">
+                  <p class="title">Web Development</p>
+                  <p class="text">Web app Development</p>
+                </div>
+                <div class="description">
+                  <p class="title">App Development</p>
+                  <p class="text">Building Android/iOS apps</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="my-services">
+      <section class="section-services">
         <div class="container">
-          <h2 class="primary-secondary">My Services</h2>
-        </div>
-        <div class="container grid grid--2--col"></div>
-      </section>
-
-      <section class="my-work">
-        <div class="container">
-          <h2 class="primary-secondary">My Work</h2>
-        </div>
-        <div class="container grid grid--2--col"></div>
-        <div>
-          <a href="#" class="btn btn-fillout">See more</a>
-        </div>
-      </section>
-
-      <section class="contact">
-        <div class="container grid grid--3--col">
-          <div class="contact-info">
-            <h2 class="primary-secondary">Contact Me</h2>
-            <address>
-              <a href="mailto:contact@example.com">contact@example.com</a>
-              <a href="tel:0478787878">0478787878</a>
-            </address>
-            <div class="contact-icon"></div>
-            <a href="#" class="btn btn-fill">Download CV</a>
+          <h1 class="heading-primary">My Services</h1>
+          <div class="grid grid--3--col">
+            <div class="services-card">
+              <ion-icon class="service-icon" name="code-working"></ion-icon>
+              <h2 class="heading-secondary">Web Design</h2>
+              <p class="service-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+                doloremque asperiores vel perferendis commodi at obcaecati
+                voluptatum hic. Qui, expedita omnis.
+              </p>
+              <a href="#">Learn more</a>
+            </div>
+            <div class="services-card">
+              <ion-icon class="service-icon" name="expand"></ion-icon>
+              <h2 class="heading-secondary">UI/UX Design</h2>
+              <p class="service-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+                doloremque asperiores vel perferendis commodi at obcaecati
+                voluptatum hic. Qui, expedita omnis.
+              </p>
+              <a href="#">Learn more</a>
+            </div>
+            <div class="services-card">
+              <ion-icon class="service-icon" name="appstore"></ion-icon>
+              <h2 class="heading-secondary">App Design</h2>
+              <p class="service-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+                doloremque asperiores vel perferendis commodi at obcaecati
+                voluptatum hic. Qui, expedita omnis.
+              </p>
+              <a href="#">Learn more</a>
+            </div>
           </div>
-          <div class="contact-form">
-            <form action=""></form>
-            <a href="#" class="btn btn-fill">Submit</a>
+        </div>
+      </section>
+
+      <section class="section-work">
+        <div class="container">
+          <h1 class="heading-primary">My Work</h1>
+          <div class="grid grid--3--col">
+            <div class="work-img-social work-img">
+              <div class="work-desc hidden">
+                <p class="work-title">Social Media App</p>
+                <p class="work-text">
+                  The app connects you yo the talented people around the world.
+                  Download it from play store
+                </p>
+                <div class="div-icon">
+                  <ion-icon class="work-icon" name="share-alt"></ion-icon>
+                </div>
+              </div>
+            </div>
+            <div class="work-img-music work-img">
+              <div class="work-desc hidden">
+                <p class="work-title">Music App</p>
+                <p class="work-text">
+                  The app connects you yo the talented people around the world.
+                  Download it from play store
+                </p>
+                <div class="div-icon">
+                  <ion-icon class="work-icon" name="share-alt"></ion-icon>
+                </div>
+              </div>
+            </div>
+            <div class="work-img-shop work-img">
+              <div class="work-desc hidden">
+                <p class="work-title">Online Shopping App</p>
+                <p class="work-text">
+                  The app connects you yo the talented people around the world.
+                  Download it from play store
+                </p>
+                <div class="div-icon">
+                  <ion-icon class="work-icon" name="share-alt"></ion-icon>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="work-btn-more">
+            <a href="#" class="btn btn-outline">See more</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-contact">
+        <div class="container">
+          <div class="grid grid--3--col">
+            <div class="contact-info">
+              <h1 class="heading-primary">Contact Me</h1>
+              <address class="cta-info">
+                <div class="cta-email">
+                  <ion-icon name="paper-plane" class="cta-info-icon"></ion-icon>
+                  <a href="mailto:contact@example.com" class="cta-info-text"
+                    >contact@example.com</a
+                  >
+                </div>
+                <div class="cta-phone">
+                  <ion-icon name="call" class="cta-info-icon"></ion-icon>
+                  <a href="tel:0478787878" class="cta-info-text">0478787878</a>
+                </div>
+              </address>
+              <div class="cta-social-icons">
+                <ion-icon
+                  class="cta-social-icon"
+                  name="logo-facebook"
+                ></ion-icon>
+                <ion-icon
+                  class="cta-social-icon"
+                  name="logo-twitter"
+                ></ion-icon>
+                <ion-icon
+                  class="cta-social-icon"
+                  name="logo-instagram"
+                ></ion-icon>
+                <ion-icon
+                  class="cta-social-icon"
+                  name="logo-linkedin"
+                ></ion-icon>
+              </div>
+              <a href="#" class="btn btn-fill">Download CV</a>
+            </div>
+
+            <div class="contact-form">
+              <form class="cta-div-form">
+                <input class="input" type="text" placeholder="Your Name" required/>
+                <input class="input" type="email" placeholder="Your Email" required/>
+                <!-- <input class="input text" type="text" placeholder="Your Message" required/> -->
+                <textarea class="input text" placeholder="Your Message" required rows="10"></textarea>
+              </form>
+              <a href="#" class="btn btn-fill">Submit</a>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <footer></footer>
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   </body>
 </html>
