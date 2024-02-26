@@ -1,5 +1,5 @@
 .section-services {
-  background-color: #af9f9f;
+  background-color: #010101;
   height: 100vh;
   padding: 9.6rem 0 12.8rem 0;
 }
@@ -7,6 +7,8 @@
 .services-card {
   background-color: #272727;
   padding: 4.8rem 3.2rem;
+  border-radius: 7px;
+  transition: all 500ms;
 }
 
 .service-icon {
@@ -32,4 +34,10 @@
   color: #c8c8c8;
   line-height: 1.35;
   text-decoration: none;
+}
+
+/* services card animation */
+.services-card:hover {
+  background-color: #ff004f;
+  transform: translateY(-5%);
 }

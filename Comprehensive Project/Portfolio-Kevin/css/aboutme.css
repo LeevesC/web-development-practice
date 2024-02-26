@@ -1,7 +1,7 @@
 .section-aboutme {
-  background-color: #7c7c7c;
+  background-color: #010101;
   height: 100vh;
-  padding: 9.6rem 0 12.8rem 0;
+  padding: 9.6rem 0 0 0;
 }
 
 .aboutme-img img {
@@ -13,6 +13,7 @@
 /* adjust the width ratio */
 .section-aboutme .grid--3--col {
   grid-template-columns: 1.33fr 1fr 1fr;
+  gap: 6.4rem;
 }
 .resume {
   grid-column: 2 / 4;
@@ -27,7 +28,7 @@
   color: #c8c8c8;
   line-height: 1.35;
   letter-spacing: 0.75px;
-  margin-bottom: 2.4rem;
+  margin-bottom: 3.2rem;
 }
 
 /* about me cv */
@@ -35,16 +36,20 @@
   list-style: none;
   display: flex;
   gap: 4.8rem;
-  margin-bottom: 2.4rem;
+}
+
+.aboutme-cv-nav {
+  margin-bottom: 4.8rem;
 }
 
 .cv-nav-link {
   text-decoration: none;
   font-size: 2.0rem;
   color: #c8c8c8;
+  position: relative;
 }
 
-.skills {
+.cv-des {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
@@ -58,4 +63,23 @@
 .description .text {
   font-size: 1.8rem;
   color: #c8c8c8;
+}
+
+.cv-nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ff004f;
+  position: absolute;
+  bottom: -0.4rem;
+  left: 0;
+  transition: all 500ms;
+}
+.cv-nav-link.active::after {
+  width: 50%;
+}
+
+.cv-des.hidden {
+  display: none;
 }

@@ -62,12 +62,12 @@
             <div class="aboutme-cv">
               <nav class="aboutme-cv-nav">
                 <ul>
-                  <li><a href="#" class="cv-nav-link">Skills</a></li>
-                  <li><a href="#" class="cv-nav-link">Experience</a></li>
-                  <li><a href="#" class="cv-nav-link">Education</a></li>
+                  <li><a href="#" class="cv-nav-link active" id="skills">Skills</a></li>
+                  <li><a href="#" class="cv-nav-link" id="exp">Experience</a></li>
+                  <li><a href="#" class="cv-nav-link" id="edu">Education</a></li>
                 </ul>
               </nav>
-              <div class="skills">
+              <div class="cv-des" id="des-skills">
                 <div class="description">
                   <p class="title">UI/UX</p>
                   <p class="text">Designing Web/App Interfaces</p>
@@ -79,6 +79,38 @@
                 <div class="description">
                   <p class="title">App Development</p>
                   <p class="text">Building Android/iOS apps</p>
+                </div>
+              </div>
+              <div class="cv-des hidden" id="des-exp">
+                <div class="description">
+                  <p class="title">2021 - Current</p>
+                  <p class="text">UI/UX Design Training at ET Institute.</p>
+                </div>
+                <div class="description">
+                  <p class="title">2019 - 2021</p>
+                  <p class="text">Team lead at StarApp LLC.</p>
+                </div>
+                <div class="description">
+                  <p class="title">2017 - 2019</p>
+                  <p class="text">UI/UX Design Executive at Coin Digital Ltd.</p>
+                </div>
+                <div class="description">
+                  <p class="title">2016 - 2017</p>
+                  <p class="text">Internship at ekart eCommerce.</p>
+                </div>
+              </div>
+              <div class="cv-des hidden" id="des-edu">
+                <div class="description">
+                  <p class="title">2016</p>
+                  <p class="text">UI/UX Design Training at ET Institute.</p>
+                </div>
+                <div class="description">
+                  <p class="title">2015</p>
+                  <p class="text">MBA from MIT Bangalore.</p>
+                </div>
+                <div class="description">
+                  <p class="title">2014</p>
+                  <p class="text">BBA from ISM Bangalore.</p>
                 </div>
               </div>
             </div>
@@ -226,5 +258,6 @@
     <footer></footer>
 
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>

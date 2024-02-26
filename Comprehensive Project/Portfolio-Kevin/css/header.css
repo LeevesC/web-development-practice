@@ -23,6 +23,8 @@
   font-size: 2.4rem;
   color: rgb(201, 201, 201);
   font-weight: 300;
+  transition: all 300ms;
+  position: relative;
 }
 
 /* hero section */
@@ -43,9 +45,20 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed; 
-  background-image: linear-gradient(
-    to right bottom,
-    rgba(235, 151, 78, 0.35),
-    rgba(230, 125, 34, 0.35)
-  ),url('../images/background.png');
+  background-image: url('../images/background.png');
+}
+
+.main-nav-link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px; /* Thickness of the underline */
+  background: #ff004f; /* Color of the underline */
+  transition: all 0.5s ease;
+  position: absolute;
+  bottom: -0.4rem;
+  left: 0;
+}
+.main-nav-link:hover::after {
+  width: 100%; /* Full width on hover */
 }
