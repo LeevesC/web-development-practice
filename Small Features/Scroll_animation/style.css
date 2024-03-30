@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  min-height: 200vh;
+  background: #222;
+}
+section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  clip-path: circle(0px at left center);
+  z-index: 2;
+}
+
+.title {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+  color: #00a8ff;
+  z-index: 1;
+  font-size: 25vw;
+}
+.inner-title {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+  /* color: #00a8ff; */
+  z-index: 1;
+  font-size: 25vw;
+  background-image: url(./pexels-ihsan-adityawarman-1677953.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-clip: text;
+  color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 12px; /* or any desired width */
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(163, 25, 25); /* or any color */
+  border-radius: 10px; /* optional: for rounded corners */
+  z-index: 999;
+}
