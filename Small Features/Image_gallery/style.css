@@ -12,17 +12,18 @@ body {
 
 .container {
   /* border: #fff 1px solid; */
-  margin-top: 10px;
+  margin: 10px auto;
   display: grid;
   grid-template-areas:
     "pic1 pic3 pic4"
     "pic1 pic3 pic6"
     "pic2 pic3 pic6"
     "pic2 pic5 pic5";
-  grid-template-columns: 160px 160px 160px;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 150px 150px 150px 150px;
   gap: 15px;
   justify-content: center;
+  width: 600px;
 }
 
 .container .pic1 {
@@ -49,10 +50,10 @@ img {
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
-  filter: grayscale(1);
+  /* filter: grayscale(1); */
   transition: all 500ms;
 }
-img:hover {
-  filter: grayscale(0);
-  cursor: pointer;
+.container:hover .item img:not(:hover) {
+  filter: grayscale(1);
+  opacity: 0.5;
 }
