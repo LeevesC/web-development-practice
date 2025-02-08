@@ -1,79 +1,29 @@
 import { useState } from "react";
 
-const pizzaData = [
-  {
-    name: "Focaccia",
-    ingredients: "Bread with italian olive oil and rosemary",
-    price: 6,
-    photoName: "pizzas/focaccia.jpg",
-    soldOut: false,
-  },
-  {
-    name: "Pizza Margherita",
-    ingredients: "Tomato and mozarella",
-    price: 10,
-    photoName: "pizzas/margherita.jpg",
-    soldOut: false,
-  },
-  {
-    name: "Pizza Spinaci",
-    ingredients: "Tomato, mozarella, spinach, and ricotta cheese",
-    price: 12,
-    photoName: "pizzas/spinaci.jpg",
-    soldOut: false,
-  },
-  {
-    name: "Pizza Funghi",
-    ingredients: "Tomato, mozarella, mushrooms, and onion",
-    price: 12,
-    photoName: "pizzas/funghi.jpg",
-    soldOut: false,
-  },
-];
+const messages = ["Learn React", "Apply for jobs", "Invest your new income"];
 
 export default function App() {
+  const [step, setStep] = useState(0);
+
+  function previous() {
+    setStep((step) => (step - 1 < 0 ? 2 : step - 1));
+  }
+  function next() {
+    setStep((step) => (step + 1 > 2 ? 0 : step + 1));
+  }
+
   return (
-    <div>
-      <Header />
-      <Menu />
-      <Footer />
+    <div className="steps">
+      <div className="numbers">
+        <div className={step + 1 === 1 ? "active" : null}>1</div>
+        <div className={step + 1 === 2 ? "active" : null}>2</div>
+        <div className={step + 1 === 3 ? "active" : null}>3</div>
+      </div>
+      <p className="message">{messages[step]}</p>
+      <div className="buttons">
+        <button onClick={previous}>Previous</button>
+        <button onClick={next}>Next</button>
+      </div>
     </div>
-  );
-}
-
-function Header() {
-  return <header>Fast React Pizza Co.</header>;
-}
-
-function Menu() {
-  return (
-    <div>
-      <h2>Our menu</h2>
-      {pizzaData.map((pizza) => (
-        <Pizza
-          key={pizza.name}
-          name={pizza.name}
-          ingredients={pizza.ingredients}
-          price={pizza.price}
-        />
-      ))}
-    </div>
-  );
-}
-
-function Pizza(promp) {
-  return (
-    <div>
-      <img src="/" alt="xxx" />
-      <h4>{promp.name}</h4>
-      <p>{promp.ingredients}</p>
-      <span>{promp.price}</span>
-    </div>
-  );
-}
-
-function Footer() {
-  return (
-    <footer> {new Date().toLocaleTimeString()}We are currently open!</footer>
   );
 }
