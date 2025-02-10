@@ -1,29 +1,86 @@
 import { useState } from "react";
 
-const messages = ["Learn React", "Apply for jobs", "Invest your new income"];
-
 export default function App() {
-  const [step, setStep] = useState(0);
+  const [items, setItems] = useState([
+    { description: "soes", quantity: 2, packed: true },
+  ]);
+  return (
+    <div className="app">
+      <Logo />
+      <Form items={items} setItems={setItems} />
+      <PackingList items={items} />
+      <Stats />
+    </div>
+  );
+}
 
-  function previous() {
-    setStep((step) => (step - 1 < 0 ? 2 : step - 1));
-  }
-  function next() {
-    setStep((step) => (step + 1 > 2 ? 0 : step + 1));
+function Logo() {
+  return <h1>Far Away</h1>;
+}
+
+function Form({ items, setItems }) {
+  const [description, setDescription] = useState("");
+  const [quantity, setQuantity] = useState(1);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!description) return;
+    setItems((items) => [
+      ...items,
+      { description: description, quantity: quantity, packed: false },
+    ]);
+    setDescription("");
+    setQuantity(1);
   }
 
   return (
-    <div className="steps">
-      <div className="numbers">
-        <div className={step + 1 === 1 ? "active" : null}>1</div>
-        <div className={step + 1 === 2 ? "active" : null}>2</div>
-        <div className={step + 1 === 3 ? "active" : null}>3</div>
-      </div>
-      <p className="message">{messages[step]}</p>
-      <div className="buttons">
-        <button onClick={previous}>Previous</button>
-        <button onClick={next}>Next</button>
-      </div>
+    <form className="add-form" onSubmit={handleSubmit}>
+      <h3>What do you need for your trip?</h3>
+      <select value={quantity} onChange={(e) => setQuantity(e.target.value)}>
+        {Array.from({ length: 10 }, (_, i) => i + 1).map((i) => (
+          <option value={i} key={i}>
+            {i}
+          </option>
+        ))}
+      </select>
+      <input
+        type="text"
+        placeholder="Item..."
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+      />
+      <button>Add</button>
+    </form>
+  );
+}
+
+function PackingList({ items }) {
+  return (
+    <div className="list">
+      <ul>
+        {items.map((item) => (
+          <Item item={item} key={item.description} />
+        ))}
+      </ul>
     </div>
+  );
+}
+
+function Item({ item }) {
+  return (
+    <li>
+      <span style={item.packed ? { textDecoration: "line-through" } : {}}>
+        {item.quantity} {item.description}
+      </span>
+      <button>x</button>
+    </li>
+  );
+}
+
+function Stats() {
+  return (
+    <footer>
+      <em>You have xxx items on your list, and you packed x (x%)</em>
+    </footer>
   );
 }
