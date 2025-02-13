@@ -4,14 +4,28 @@ export default function App() {
   const [items, setItems] = useState([]);
 
   function handleDelete(id) {
+    // update items Array
     setItems(items.filter((item) => item.id != id));
+  }
+
+  function handlePacked(id) {
+    // using map to update certain element's property
+    setItems((items) =>
+      items.map((item) =>
+        item.id === id ? { ...item, packed: !item.packed } : item
+      )
+    );
   }
 
   return (
     <div className="app">
       <Logo />
       <Form items={items} setItems={setItems} />
-      <PackingList items={items} onDeleteItem={handleDelete} />
+      <PackingList
+        items={items}
+        onDeleteItem={handleDelete}
+        onPacked={handlePacked}
+      />
       <Stats />
     </div>
   );
@@ -62,21 +76,27 @@ function Form({ items, setItems }) {
   );
 }
 
-function PackingList({ items, onDeleteItem }) {
+function PackingList({ items, onDeleteItem, onPacked }) {
   return (
     <div className="list">
       <ul>
         {items.map((item) => (
-          <Item item={item} key={item.id} onDeleteItem={onDeleteItem} />
+          <Item
+            item={item}
+            onDeleteItem={onDeleteItem}
+            onPacked={onPacked}
+            key={item.id}
+          />
         ))}
       </ul>
     </div>
   );
 }
 
-function Item({ item, onDeleteItem }) {
+function Item({ item, onDeleteItem, onPacked }) {
   return (
     <li>
+      <input type="checkbox" onChange={() => onPacked(item.id)} />
       <span style={item.packed ? { textDecoration: "line-through" } : {}}>
         {item.quantity} {item.description}
       </span>
