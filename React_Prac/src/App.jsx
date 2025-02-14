@@ -2,6 +2,11 @@ import { useState } from "react";
 
 export default function App() {
   const [items, setItems] = useState([]);
+  const itemsNum = items.length;
+  const packedNum = items.reduce(
+    (total, curr) => (total += curr.packed ? 1 : 0),
+    0
+  );
 
   function handleDelete(id) {
     // update items Array
@@ -17,6 +22,28 @@ export default function App() {
     );
   }
 
+  function handleSort(e) {
+    // e.preventDefault();
+    const method = e.currentTarget.value;
+    if (method === "input") {
+      setItems((items) => [...items].sort((a, b) => a.id - b.id));
+    } else if (method === "description") {
+      // console.log(items);
+      setItems((items) =>
+        [...items].sort((a, b) => a.description.localeCompare(b.description))
+      );
+      // console.log(items);
+    } else if (method === "packed") {
+      setItems((items) =>
+        [...items].sort((a, b) => Number(a.packed) - Number(b.packed))
+      );
+    }
+  }
+
+  function hanldeClear() {
+    setItems(() => []);
+  }
+
   return (
     <div className="app">
       <Logo />
@@ -25,8 +52,10 @@ export default function App() {
         items={items}
         onDeleteItem={handleDelete}
         onPacked={handlePacked}
+        onSorting={handleSort}
+        onClear={hanldeClear}
       />
-      <Stats />
+      <Stats itemsNum={itemsNum} packedNum={packedNum} />
     </div>
   );
 }
@@ -76,7 +105,7 @@ function Form({ items, setItems }) {
   );
 }
 
-function PackingList({ items, onDeleteItem, onPacked }) {
+function PackingList({ items, onDeleteItem, onPacked, onSorting, onClear }) {
   return (
     <div className="list">
       <ul>
@@ -89,6 +118,14 @@ function PackingList({ items, onDeleteItem, onPacked }) {
           />
         ))}
       </ul>
+      <div className="actions">
+        <select onChange={onSorting}>
+          <option value="input">Sort by input order</option>
+          <option value="description">Sort by description</option>
+          <option value="packed">Sort by packed status</option>
+        </select>
+        <button onClick={onClear}>Clear List</button>
+      </div>
     </div>
   );
 }
@@ -105,10 +142,13 @@ function Item({ item, onDeleteItem, onPacked }) {
   );
 }
 
-function Stats() {
+function Stats({ itemsNum, packedNum }) {
   return (
-    <footer>
-      <em>You have xxx items on your list, and you packed x (x%)</em>
+    <footer className="stats">
+      <em>
+        You have {itemsNum} items on your list, and you packed {packedNum} (
+        {packedNum ? Math.round((packedNum / itemsNum) * 100, 2) : 0}%)
+      </em>
     </footer>
   );
 }
