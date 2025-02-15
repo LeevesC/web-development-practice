@@ -1,4 +1,5 @@
 import { useState } from "react";
+import StarRating from "./StarRating";
 
 const tempMovieData = [
   {
@@ -153,6 +154,7 @@ function WatchedItem({ movie }) {
 export default function App() {
   const [movies, setMovies] = useState(tempMovieData);
   const [watched, setWatched] = useState(tempWatchedData);
+  const [rating, onSetRating] = useState(null);
   return (
     <>
       <Nav>
@@ -163,6 +165,8 @@ export default function App() {
       <Main>
         <Box>
           <MoviesList movies={movies} />
+          <StarRating maxRating={5} onSetRating={onSetRating} />
+          <p>This on is {rating} score</p>
         </Box>
 
         <Box>
