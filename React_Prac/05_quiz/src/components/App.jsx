@@ -9,11 +9,9 @@ import NextButton from "./NextButton";
 import Progress from "./Progress";
 import FinishScreen from "./FinishScreen";
 import Timer from "./Timer";
-// import TimerTest from "./TimerTest";
 
 const initialState = {
   questions: [],
-  // loading, error, ready, active, finished
   status: "loading",
   index: 0,
   answer: null,
