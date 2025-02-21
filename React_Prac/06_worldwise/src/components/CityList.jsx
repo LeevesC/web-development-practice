@@ -2,8 +2,11 @@ import Spinner from "./Spinner";
 import CityItem from "./CityItem";
 import Message from "./Message";
 import styles from "./CityList.module.css";
+import { useContext } from "react";
+import { CityContext } from "../context/CityContext";
 
-function CityList({ citiesData, isLoading }) {
+function CityList() {
+  const { isLoading, citiesData } = useContext(CityContext);
   const nullCityData = citiesData.length === 0;
   // console.log(nullCityData);
 
