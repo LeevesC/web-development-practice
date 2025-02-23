@@ -37,27 +37,15 @@
       }
     },
     {
-      "id": "00f3",
-      "cityName": "Kislingbury",
-      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
-      "emoji": "🇬🇧",
+      "id": "a243",
+      "cityName": "Elche de la Sierra",
+      "country": "Spain",
+      "emoji": "🇪🇸",
       "date": "2027-10-31T15:59:59.138Z",
-      "notes": "tt",
+      "notes": "gogogo",
       "position": {
-        "lat": "52.20637073926656",
-        "lng": "-0.9668291721056301"
-      }
-    },
-    {
-      "id": "348e",
-      "cityName": "Eidfjord",
-      "country": "Norway",
-      "emoji": "🇳🇴",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "ggg",
-      "position": {
-        "lat": "60.32163266262053",
-        "lng": "7.558434710379968"
+        "lat": "38.41205439817668",
+        "lng": "-2.1851487907293636"
       }
     }
   ]
