@@ -1,4 +1,7 @@
-function FinishScreen({ dispatch, sumPoints }) {
+import { QuizContext } from "../context/QuizContext";
+import { useContext } from "react";
+function FinishScreen() {
+  const { sumPoints, dispatch } = useContext(QuizContext);
   return (
     <div>
       <p className="result">You scored {sumPoints}</p>
