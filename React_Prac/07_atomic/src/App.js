@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { usePosts, PostProvider } from "./PostProvider";
 
 function App() {
@@ -122,7 +122,7 @@ function List() {
   );
 }
 
-function Archive() {
+const Archive = memo(function Archive() {
   // Here we don't need the setter function.
   // We're only using state to store these posts because the callback function passed into useState (which generates the posts) is only called once,
   // on the initial render. So we use this trick as an optimization technique,
@@ -159,6 +159,6 @@ function Archive() {
       )}
     </aside>
   );
-}
+});
 
 export default App;
