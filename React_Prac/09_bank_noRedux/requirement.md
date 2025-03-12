@@ -58,3 +58,9 @@
 - Scalability: As your application grows, useReducer contexts can become unwieldy. Redux provides better patterns for scaling state management.
 - State Persistence: Redux has established patterns for persisting and rehydrating state (with redux-persist), which you'd need to implement manually with useReducer.
 - Standardized Patterns: Redux has more established patterns for handling common scenarios like loading states, error states, and optimistic updates.
+
+# Global State and Local State
+
+- Not all state is global state
+- Keep state as close as possible to where it's used
+- Context/reducers are best for truly shared state

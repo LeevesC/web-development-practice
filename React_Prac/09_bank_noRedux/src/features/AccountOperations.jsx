@@ -1,16 +1,16 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AccountContext } from "../contexts/accountContext.jsx";
 import { convertCurrency } from "../utility/helper.jsx";
 function AccountOperations() {
   const { accountState, accountDispatch } = useContext(AccountContext);
-  const {
-    currency,
-    depositAmount,
-    withdrawalAmount,
-    loanAmount,
-    loanPurpose,
-    existedLoan,
-  } = accountState;
+
+  const [depositAmount, setDepositAmount] = useState("");
+  const [currency, setCurrency] = useState("USD");
+  const [withdrawalAmount, setWithdrawalAmount] = useState("");
+  const [loanAmount, setLoanAmount] = useState("");
+  const [loanPurpose, setLoanPurpose] = useState("");
+
+  const { balance, existedLoan } = accountState;
 
   async function handleDeposit(e) {
     e.preventDefault();
@@ -30,6 +30,37 @@ function AccountOperations() {
         payload: convertedAmount,
       });
     }
+    setDepositAmount("");
+    setCurrency("USD");
+  }
+
+  function handleRequestLoan() {
+    if (loanAmount <= 0 || loanPurpose === "") {
+      alert("Please enter a valid loan amount and purpose");
+      return;
+    } else if (existedLoan) {
+      alert("You already have a loan");
+      return;
+    }
+    accountDispatch({
+      type: "requestLoan",
+      payload: loanAmount,
+    });
+    setLoanAmount("");
+    setLoanPurpose("");
+  }
+
+  function handlePayLoan() {
+    if (existedLoan === "") {
+      alert("You don't have a loan");
+      return;
+    } else if (balance < existedLoan) {
+      alert("You don't have enough balance");
+      return;
+    }
+    accountDispatch({
+      type: "payLoan",
+    });
   }
 
   return (
@@ -41,21 +72,11 @@ function AccountOperations() {
           <input
             type="number"
             value={depositAmount}
-            onChange={(e) =>
-              accountDispatch({
-                type: "setDepositAmount",
-                payload: e.target.value,
-              })
-            }
+            onChange={(e) => setDepositAmount(e.target.value)}
           />
           <select
             value={currency}
-            onChange={(e) =>
-              accountDispatch({
-                type: "setCurrency",
-                payload: e.target.value,
-              })
-            }
+            onChange={(e) => setCurrency(e.target.value)}
           >
             <option value="USD">US Dollar</option>
             <option value="EUR">Euro</option>
@@ -70,12 +91,7 @@ function AccountOperations() {
           <input
             type="number"
             value={withdrawalAmount}
-            onChange={(e) =>
-              accountDispatch({
-                type: "setWithdrawalAmount",
-                payload: e.target.value,
-              })
-            }
+            onChange={(e) => setWithdrawalAmount(e.target.value)}
           />
           <button
             onClick={() =>
@@ -94,47 +110,19 @@ function AccountOperations() {
           <input
             type="number"
             value={loanAmount}
-            onChange={(e) =>
-              accountDispatch({
-                type: "setLoanAmount",
-                payload: e.target.value,
-              })
-            }
+            onChange={(e) => setLoanAmount(e.target.value)}
             placeholder="Loan amount"
           />
           <input
             value={loanPurpose}
-            onChange={(e) =>
-              accountDispatch({
-                type: "setLoanPurpose",
-                payload: e.target.value,
-              })
-            }
+            onChange={(e) => setLoanPurpose(e.target.value)}
             placeholder="Loan purpose"
           />
-          <button
-            onClick={() =>
-              accountDispatch({
-                type: "requestLoan",
-                payload: loanAmount,
-              })
-            }
-          >
-            Request loan
-          </button>
+          <button onClick={handleRequestLoan}>Request loan</button>
         </div>
         <div>
           <span>Pay back {existedLoan}</span>
-          <button
-            onClick={() =>
-              accountDispatch({
-                type: "payLoan",
-                payload: existedLoan,
-              })
-            }
-          >
-            Pay loan
-          </button>
+          <button onClick={handlePayLoan}>Pay loan</button>
         </div>
       </div>
     </div>
