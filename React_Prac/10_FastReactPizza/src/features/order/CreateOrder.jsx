@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import EmptyCart from "../cart/EmptyCart";
 import { clearCart } from "../cart/cartSlice";
 import store from "../../store";
-import { fetchAddress } from "../user/userSlice";
+import { fetchAddress, updateAddress } from "../user/userSlice";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -14,20 +14,22 @@ const isValidPhone = (str) =>
   );
 
 function CreateOrder() {
-  const {
-    username,
-    address,
-    error: addressError,
-    status: addressStatus,
-  } = useSelector((state) => state.user);
-  const isLoadingAddress = addressStatus === "loading";
+  const { username, address } = useSelector((state) => state.user);
+  // const isLoadingAddress = addressStatus === "loading";
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
   const formErrors = useActionData();
+  const dispatch = useDispatch();
   // const [withPriority, setWithPriority] = useState(false);
   const cart = useSelector((state) => state.cart.cart);
-  const dispatch = useDispatch();
   if (!cart.length) return <EmptyCart />;
+
+  async function handleFetchAddress() {
+    const data = await fetchAddress();
+    const { position, address } = data;
+    console.log(address);
+    dispatch(updateAddress(address));
+  }
 
   return (
     <div className="px-4 py-6">
@@ -64,24 +66,19 @@ function CreateOrder() {
               name="address"
               required
               className="input"
-              disabled={isLoadingAddress}
+              // disabled={isLoadingAddress}
               defaultValue={address}
             />
-            {addressStatus === "error" && (
-              <p className="text-xs mt-2 bg-red-100 p-2 text-red-700">
-                {addressError}
-              </p>
-            )}
           </div>
           <button
             type="button"
             onClick={(e) => {
               e.preventDefault();
-              dispatch(fetchAddress());
+              handleFetchAddress();
             }}
-            disabled={isLoadingAddress}
+            // disabled={isLoadingAddress}
           >
-            {isLoadingAddress ? "Loading..." : "Get position"}
+            {"Get position"}
           </button>
         </div>
 

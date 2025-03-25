@@ -110,3 +110,44 @@
 - These older APIs still use callbacks instead of Promises because they were built before Promises became popular.
 
 promisification - converting a callback-based API into a Promise-based one.
+
+## Implementations handling geolocation fetching
+
+### my way
+
+- A Promise wrapper for geolocation in userSlice.js
+- A direct fetch call in the component's click handler
+- Regular Redux actions to update the state after fetching
+- Pros of Current Approach:
+  - Simpler to understand - it follows a more straightforward flow
+  - Less boilerplate code
+  - More familiar if you're coming from regular React/Redux
+  - Good enough for simple async operations
+- Cons of Current Approach:
+  - Business logic is mixed with component code
+  - Less consistent with Redux patterns
+  - Harder to handle loading/error states
+  - More difficult to reuse the fetching logic
+  - Testing could be more complicated
+
+### Why Thunk might be better
+
+- Separates async logic from components
+- Provides a standard way to handle async operations
+- Better error handling and loading state management
+- Makes testing easier
+- More scalable as application grows
+- Better integration with Redux DevTools
+
+```
+A React component ideally should focus primarily on:
+- Rendering UI elements
+- Handling user interactions (clicks, form inputs, etc.)
+- Managing local component state when necessary
+- Dispatching actions or calling functions that are defined elsewhere
+It should generally NOT be responsible for:
+- Complex data processing
+- API calls or data fetching logic
+- Data transformation
+- Business rules and calculations
+```
